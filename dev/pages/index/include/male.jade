@@ -1,0 +1,24 @@
+section.channel-male
+  .channel-male--header
+    h2.channel-male--header-title 男生最爱
+  ul.list
+    each item,index in data.male.data
+      if index < max.item
+        li.book
+          .book--cover
+            img(src="#{item.cover}")
+            p.book--cover-finish
+          .book--info
+            p.book-title #{item.title}
+            p.book-author #{item.authors}
+            - item.summary = item.summary.split(/\s*\.*\s*$/).join('')
+            p.book-summary #{item.summary}
+            .book--tap
+              each tag,index in item.tags
+                //- 控制显示标签个数
+                if index < max.tag
+                  .book--tap-item #{tag}
+  .channel-male--footer-next
+    a.item.channel-male--footer-next-change(href='javascript:') 换一换
+    a.item.channel-male--footer-next-channel(href='/male') 男生频道
+

@@ -1,0 +1,33 @@
+section.top-home
+  a(href="/search")
+    .top-home--search
+      i.icon.icon-search
+      span 输入书名/作者/关键字
+  ul.top-home--banner
+    each item in data.top.data
+      - item.ad_pic_url = item.ad_pic_url.trim()
+      if item.ad_pic_url !== ''
+        li
+          a(href="#")
+            img.cover(src="#{item.ad_pic_url}")
+  ul.top-home--btn
+    li.item
+      a(href="/free")
+        i.icon.icon-money
+        p 免费
+    li.item
+      a(href="/male")
+        i.icon.icon-male
+        p 男生
+    li.item
+      a(href="/female")
+        i.icon.icon-female
+        p 女生
+    li.item
+      a(href="/sort")
+        i.icon.icon-category
+        p 分类
+    li.item
+      a(href="/rank")
+        i.icon.icon-rank
+        p 排行

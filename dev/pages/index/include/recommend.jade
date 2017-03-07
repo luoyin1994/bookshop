@@ -1,0 +1,34 @@
+section.channel-recommend
+  .channel-recommend--header
+    h2.channel-recommend--header-title 重磅推荐
+    .channel-recommend--header-change
+      a.item.channel-recommend--header-change-male(href='javascript:')
+      span.item.line-v
+      a.item.channel-recommend--header-change-female.select(href='javascript:')
+
+  ul.list
+    - var item = data.recommend.data[0]
+    li.book
+      .book--cover
+        span.book--img-order 1
+        img(src="#{item.cover}")
+        p.book--cover-finish
+      .book--info
+        p.book-title #{item.title}
+        p.book-author #{item.authors}
+        - item.summary = item.summary.split(/\s*\.*\s*$/).join('')
+        p.book-summary #{item.summary}
+        .book--tap
+          each tag,index in item.tags
+            //- 控制显示标签个数
+            if index < max.tag
+              .book--tap-item #{tag}
+    - data.recommend.data.shift()
+    each item,index in data.recommend.data
+      if index < max.item - 1
+        li.book.book--no-img
+          span.book--no-img-order 0#{index + 2}
+          .book--no-img-info
+            span.book--no-img-info-title #{item.title}
+            span.book--no-img-info-author #{item.authors}
+

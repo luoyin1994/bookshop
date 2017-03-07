@@ -1,0 +1,14 @@
+section.channel-free
+  .channel-free--header
+    h2.channel-free--header-title 限时免费
+  ul.book-table
+    each item,index in data.free.data
+      if index < 6
+        li
+          .book
+            .book-cover
+              img(src='#{item.data.cover}')
+              .book-rt-icon.freefiction
+            .book-info
+              h3.book-title #{item.data.title}
+  a.chanel-free--footer(href='/free') 更多限免佳作
