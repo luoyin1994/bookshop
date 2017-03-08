@@ -1,0 +1,13 @@
+section.channel-hot
+  .channel-hot--header
+    h2.channel-hot--header-title 本周最火
+  ul.book-table
+    each item,index in data.hot.data
+      if index < 6
+        li
+          .book
+            .book-cover
+              img(src='#{item.cover}')
+            .book-info
+              h3.book-title #{item.title}
+  a.chanel-hot--footer(href='/hot') 查看更多

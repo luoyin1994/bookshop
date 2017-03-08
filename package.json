@@ -21,6 +21,6 @@
   "scripts": {
     "start": "forever start app.js",
     "stop": "forever stop app.js",
-    "webpack": "webpack -p"
+    "webpack": "webpack -p -w"
   }
 }

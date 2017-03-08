@@ -10,9 +10,13 @@
       padding 0 15px
       vertical-align -1px
   .top-home--banner
+    item-sum = 2
+    width item-sum * 100%
     a
       .cover
-        width 100%
+        float left
+        width (100% / item-sum)
+        display inline-block
   .top-home--btn
     item-sum = 5
     font-size 0
@@ -28,7 +32,7 @@
       .icon
         font-size 25px
         &.icon-money
-          color #ffb648
+          color #7bd192
         &.icon-male
           color #9a6dff
         &.icon-female

@@ -14,18 +14,28 @@ writeFile(path_font_index + '/font.min.css', index_font)
 
 /**
  * 读取文件
- * @param dirname
+ * @param pathName
  */
-function readFile(dirname) {
-    return fs.readFileSync(dirname, 'utf8')
+function readFile(pathName) {
+    return fs.readFileSync(pathName, 'utf8')
 }
 /**
  * 重写文件
- * @param dirname
+ * @param pathName
  * @param data
  */
-function writeFile(dirname, data) {
-    return fs.writeFileSync(dirname, data, 'utf8')
+function writeFile(pathName, data) {
+    fs.writeFileSync(pathName, data, 'utf8')
+    console.log(`文件"${formateWinPath(pathName)}"已经到位了！请查看！`)
+    return true
+}
+/**
+ * 格式化 windows 路径
+ * @param pathName
+ * @returns {string}
+ */
+function formateWinPath(pathName) {
+    return pathName.split("/").join('\\')
 }
 /**
  * 压缩文件 (css,json)
