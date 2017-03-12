@@ -5,7 +5,7 @@ let path_out          = __dirname + '/public'
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports        = {
     entry  : {
-        index: [path_dev + '/style/pack.js', path_dev_pages + '/index/pack.js',],
+        index: [path_dev + '/style/pack_style.js', path_dev_pages + '/index/pack_style.js',path_dev_pages+'/ajaxIndex/pack_js.js'],
     },
     output : {
         filename: '/[name]/bundle.js',
@@ -24,4 +24,5 @@ module.exports        = {
     plugins: [
         new ExtractTextPlugin('/[name]/main.min.css'),
     ]
+
 }

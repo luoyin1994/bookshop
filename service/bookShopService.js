@@ -65,7 +65,7 @@ module.exports.get_search_data = (start, end, keyword) => {
     return (cb) => {
         const qs         = require('querystring')
         let data         = {
-            keyword: keyword,
+            s: keyword,
             start  : start,
             end    : end
         }
@@ -84,7 +84,7 @@ module.exports.get_search_data = (start, end, keyword) => {
                 content += chunk
             })
             res.on('end', () => {
-                cb(JSON.parse(content))
+                cb(content)
             })
         })
         req_obj.on('error', () => {

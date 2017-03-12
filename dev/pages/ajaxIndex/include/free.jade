@@ -1,0 +1,12 @@
+section.channel-free
+  .channel-free--header
+    h2.channel-free--header-title 限时免费
+  ul.book-table
+    li(v-for='(item,index) in data.free.data' v-if='index < bookLimitNum2')
+      .book
+        .book-cover
+          img(:src='item.data.cover')
+          .book-rt-icon.freefiction
+        .book-info
+          h3.book-title {{item.data.title}}
+  a.chanel-free--footer(href='/free') 查看更多

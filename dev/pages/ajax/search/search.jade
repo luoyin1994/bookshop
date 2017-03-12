@@ -3,6 +3,5 @@ extends ../../../layout
 block content
     //- jade的each可以遍历数组和对象，默认value在前
     //- jade的each和for效果一样
-    each item_val in data.items
-        each val,key in item_val
-            p #{key} : #{val}
+    each item in data
+        h1 #{item.intro}

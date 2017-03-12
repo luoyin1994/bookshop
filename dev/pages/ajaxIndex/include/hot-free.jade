@@ -1,0 +1,12 @@
+section.channel-hot
+  .channel-hot--header
+    h2.channel-hot--header-title 本周最火
+  ul.book-table
+    li(v-for='(item,index) in data.hot.data' v-if='index < bookLimitNum2')
+      .book
+        .book-cover
+          img(:src='item.cover')
+          .book-rt-icon.hotfiction
+        .book-info
+          h3.book-title {{item.title}}
+  a.chanel-hot--footer(href='/hot') 查看更多
