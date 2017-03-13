@@ -25,7 +25,6 @@ new Vue({
     },
     methods: {
         getData       : function () {
-            let _this = this
             axios.get('/data/index')
                 .then((res) => {
                     this.data = res.data
