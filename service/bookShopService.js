@@ -1,22 +1,14 @@
 const fs        = require('fs')
 const path      = require('path')
 const http      = require('http')
+const qs        = require('querystring')
 const path_mock = path.resolve(__dirname, '../mock')
+
 /**
  * 获得测试数据接口
  */
 module.exports.get_test_data = () => {
     let content = readeFile(path_mock + '/test.json')
-    return JSON.parse(content)
-}
-
-/**
- * 获得图书页数据接口
- * @param id
- */
-module.exports.get_book_data = (id) => {
-    if (!id) id = "1"
-    let content = readeFile(path_mock + `/book/${id}.json`)
     return JSON.parse(content)
 }
 
@@ -55,6 +47,54 @@ module.exports.get_index_data = () => {
     return data
 }
 /**
+ * 获得图书详情页数据接口
+ * @param id
+ */
+module.exports.get_book_data = (id) => {
+    return (cb) => {
+        if (!id) id = "10000"
+        http.request({
+            hostname: 'dushu.xiaomi.com',
+            port    : 80,
+            path    : '/hs/v0/android/fiction/book/' + id
+        }, function (res) {
+            let str = ''
+            res.setEncoding('utf8')
+            res.on('data', (chunk) => {
+                str += chunk
+            })
+            res.on('end', () => {
+                cb(JSON.parse(str))
+            })
+        }).on('error', (err) => {
+            throw err.message
+        }).end()
+    }
+}
+/**
+ * 获得章节数接口
+ */
+module.exports.get_chapterLength_data = () => {
+    let content = readeFile(path_mock + '/book/chapter.json')
+    return content
+}
+/**
+ * 获得章节数据地址接口
+ */
+module.exports.get_chapterUrl_data = (chapterId) => {
+    if(!chapterId) chapterId = 0
+    let content = readeFile(`${path_mock}/book/data${chapterId}.json`)
+    return content
+}
+/**
+ * 获得章节数据接口
+ */
+module.exports.get_chapter_data = (url) => {
+    if(!chapterId) chapterId = 0
+    let content = readeFile(`${path_mock}/book/data${chapterId}.json`)
+    return content
+}
+/**
  * 获得搜索数据接口
  * @param start
  * @param end
@@ -63,11 +103,10 @@ module.exports.get_index_data = () => {
  */
 module.exports.get_search_data = (start, end, keyword) => {
     return (cb) => {
-        const qs         = require('querystring')
         let data         = {
-            s: keyword,
-            start  : start,
-            end    : end
+            s    : keyword,
+            start: start,
+            end  : end
         }
         let content      = qs.stringify(data)
         //进行http请求

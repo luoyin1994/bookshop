@@ -1,0 +1,19 @@
+extends ../../layout
+block style
+  link(rel='stylesheet' href='/book/font-icon/font.min.css')
+  link(rel='stylesheet' href='/book/main.min.css')
+block content
+  #app
+    include ../../common-include/common-header
+    .container
+      include include/book-detial
+      //include include/folder
+      //include include/hot-free
+      //include include/recommend
+      //include include/female
+      //include include/male
+      //include include/free
+block script
+  script(src='//cdn.bootcss.com/vue/2.2.1/vue.min.js')
+  script(src='//cdn.bootcss.com/axios/0.15.3/axios.min.js')
+  script(src='/book/bundle.js')

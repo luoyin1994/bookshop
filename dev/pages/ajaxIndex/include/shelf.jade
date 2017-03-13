@@ -1,0 +1,16 @@
+section.shelf
+  header
+    a.shelf--search(href='/search')
+      i.icon.icon-search
+      span 输入书名/作者/关键字
+  ul.shelf--book-list
+    li.book(v-for='(item,index) in data.female.data' v-if='index < 1')
+      .book--cover
+        img(v-bind:src='item.cover')
+        p.book--cover-finish
+      .book--info
+        p.book-title {{item.title}}
+        p.book-author {{item.authors}}
+        p.book-summary {{item.summary}}
+        .book--tap
+          .book--tap-item(v-for='(tag,index) in item.tags' v-if='index < bookTagLimitNum') {{tag}}

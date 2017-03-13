@@ -5,8 +5,9 @@ section.channel-hot
     li(v-for='(item,index) in data.hot.data' v-if='index < bookLimitNum2')
       .book
         .book-cover
-          img(:src='item.cover')
-          .book-rt-icon.hotfiction
+          a(href='/book')
+            img(:src='item.cover')
+            .book-rt-icon.hotfiction
         .book-info
           h3.book-title {{item.title}}
   a.chanel-hot--footer(href='/hot') 查看更多

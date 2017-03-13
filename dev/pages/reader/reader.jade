@@ -1,0 +1,27 @@
+extends ../../layout
+block style
+  link(rel='stylesheet' href='/reader/font-icon/font.min.css')
+  link(rel='stylesheet' href='/reader/main.min.css')
+block content
+  #app
+    include ./include/header
+
+    #container(v-bind:class='{night:nightFlag}' v-bind:style="{'background-color':bgColor}" @click='toggleTopBottom()' )
+      h1 {{fictionData.t}}
+      section
+        p(v-for='item in fictionData.p' v-bind:style="{'font-size':passageFontSize}") {{item}}
+      include ./include/page-turning
+
+    include ./include/footer
+    include ./include/popUp
+
+block script
+  script(src="//cdn.bootcss.com/vue/2.1.10/vue.min.js")
+  script(src="//cdn.bootcss.com/zepto/1.2.0/zepto.min.js")
+  script.
+        window.jQuery = $
+  script(src='/dependent/base64.js')
+  script(src='/dependent/jsonp.js')
+  script(src='/dependent/index.js')
+
+
