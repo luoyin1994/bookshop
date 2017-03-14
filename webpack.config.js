@@ -6,13 +6,11 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports        = {
     entry  : {
         index    : [path_dev + '/style/pack_style.js', path_dev_pages + '/index/pack_style.js', path_dev_pages + '/index/pack_js.js'],
-        ajaxIndex: [path_dev + '/style/pack_style.js', path_dev_pages + '/ajaxIndex/pack_style.js', path_dev_pages + '/ajaxIndex/pack_js.js'],
         book     : [path_dev + '/style/pack_style.js', path_dev_pages + '/book/pack_style.js', path_dev_pages + '/book/pack_js.js'],
-        ajaxBook : [path_dev + '/style/pack_style.js', path_dev_pages + '/ajaxBook/pack_style.js', path_dev_pages + '/ajaxBook/pack_js.js'],
         reader   : [path_dev + '/style/pack_style.js', path_dev_pages + '/reader/pack_style.js', path_dev_pages + '/reader/pack_js.js'],
     },
     output : {
-        filename: '/[name]/bundle.js',
+        filename: '/[name]/bundle.min.js',
         path    : path_out
     },
     module : {

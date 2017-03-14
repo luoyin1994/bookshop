@@ -4,12 +4,9 @@ section.top-home
       i.icon.icon-search
       span 输入书名/作者/关键字
   ul.top-home--banner
-    each item in data.top.data
-      - item.ad_pic_url = item.ad_pic_url.trim()
-      if item.ad_pic_url !== ''
-        li
-          a(href="#")
-            img.cover(src="#{item.ad_pic_url}")
+    li(v-for='item in data.top.data' v-if='trim(item.ad_pic_url) !== ""')
+      a(href="#")
+        img.cover(v-bind:src='item.ad_pic_url')
   ul.top-home--btn
     li.item
       a(href="/free")

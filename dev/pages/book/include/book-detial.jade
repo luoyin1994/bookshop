@@ -3,25 +3,25 @@ section.book-detial
     .book
       .book-cover
         .book-img
-          img(src='#{data.cover}')
+          img(:src='data.cover')
       .book-info
-        h3.title #{data.title}
+        h3.title {{data.title}}
         p.authors
-          span.author #{data.authors}
+          span.author {{data.authors}}
         .grade
-          span.read 12个评价
-        p.price 价格：1书币/千字
-        p.count 字数：#{data.word_count}字
+          span.read {{data.score_count}}个评价
+        p.price 价格：{{data.price}}书币/千字
+        p.count 字数：{{data.word_count}}字
           span.bookTag 连载中
   section.main-card
     .book-dash
       ul.btn-group
-        li.btn.btn1.orange(onclick='location.href="/reader"')
+        li.btn.btn1.orange(@click='readBook')
           span.book-dash-text 开始阅读
   section.main-card
     .book-folder
-      p.content #{data.content}
+      p.content {{data.content}}
       p.tail
-        span 最新更新：暂无
+        span 最新更新：{{data.lastest}}
 
 

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?xbf8ik');
-  src: url('fonts/icomoon.eot?xbf8ik#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?xbf8ik') format('truetype'),
-  url('fonts/icomoon.woff?xbf8ik') format('woff'),
-  url('fonts/icomoon.svg?xbf8ik#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?xbf8ik');
+  src:  url('fonts/icomoon.eot?xbf8ik#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xbf8ik') format('truetype'),
+    url('fonts/icomoon.woff?xbf8ik') format('woff'),
+    url('fonts/icomoon.svg?xbf8ik#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,43 +27,33 @@ i {
 .icon-style-switch:before {
   content: "\e92e";
 }
-
 .icon-load:before {
   content: "\e982";
 }
-
 .icon-check:before {
   content: "\e908";
 }
-
 .icon-rank:before {
   content: "\e907";
 }
-
 .icon-money:before {
   content: "\e906";
 }
-
 .icon-search:before {
   content: "\e900";
 }
-
 .icon-uncheck:before {
   content: "\e901";
 }
-
 .icon-user:before {
   content: "\e902";
 }
-
 .icon-category:before {
   content: "\e903";
 }
-
 .icon-male:before {
   content: "\e904";
 }
-
 .icon-female:before {
   content: "\e905";
 }

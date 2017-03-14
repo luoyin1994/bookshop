@@ -1,4 +1,3 @@
-window.jQuery = $
 new Vue({
     el     : '#app',
     data   : {
@@ -10,7 +9,7 @@ new Vue({
         passageFontSize: '15px',
         nightFlag      : false,
         alertFlag      : false,
-        chapterId      : 1,
+        chapterId      : 0,
         chapterTotal   : 1
     },
     mounted: function () {
@@ -132,12 +131,9 @@ new Vue({
                 }
                 var getFictionInfo       = function () {
                     return new Promise(function (res, err) {
-                        $.get('/data/chapter', function (data) {
+                        $.get('/data/chapterLength', function (data) {
                             if (data.result == 0) {
                                 //    todo 获取章节信息后的回调
-                                // if (_this.chapterId == null) {
-                                //     _this.chapterId = data.chapters[0].chapterId
-                                // }
                                 _this.chapterTotal = data.chapters.length
                                 res(data)
                             } else {
@@ -148,9 +144,9 @@ new Vue({
                 }
                 var getCurChapterContent = function () {//外边加一层function，return内容，需要的时候才创建
                     return new Promise(function (res, err) {
-                        $.get('/test/data/data' + _this.chapterId + '.json', function (data) {
+                        $.get('/data/chapterUrl?chapter_id=' + _this.chapterId, function (data) {
                             if (data.result == 0) {
-                                var url = data.jsonp
+                                var url = data.url
                                 _this.Util.getBSONP(url, function (data) {
                                     res(data)
                                 })
@@ -169,7 +165,9 @@ new Vue({
                         _this.chapterId = 0
                         return
                     }
-                    getCurChapterContent(_this.chapterId, UIcallback)
+                    getCurChapterContent().then(function (data) {
+                        UIcallback && UIcallback(data)
+                    })
                     _this.Util.StorageSetter('last_chapterId', _this.chapterId)
                 }
                 var nextChapter = function (UIcallback) {
@@ -180,7 +178,9 @@ new Vue({
                         _this.chapterId = _this.chapterTotal - 1
                         return
                     }
-                    getCurChapterContent(_this.chapterId, UIcallback)
+                    getCurChapterContent().then(function (data) {
+                        UIcallback && UIcallback(data)
+                    })
                     _this.Util.StorageSetter('last_chapterId', _this.chapterId)
                 }
                 return {

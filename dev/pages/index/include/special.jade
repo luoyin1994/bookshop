@@ -2,8 +2,7 @@ section.channel-special
   .channel-special--header
     h2.channel-special--header-title 精彩专题
   ul.channel-spacial--banner
-    each item in data.special.data
-      li.item
-        a(href='#')
-          img(src='#{item.ad_pic_url}')
+    li(v-for='item in data.special.data').item
+      a(href='#')
+        img(:src='item.ad_pic_url')
   a.channel-special--footer(href='/special') 更多精彩专题

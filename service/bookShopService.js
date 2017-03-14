@@ -5,14 +5,6 @@ const qs        = require('querystring')
 const path_mock = path.resolve(__dirname, '../mock')
 
 /**
- * 获得测试数据接口
- */
-module.exports.get_test_data = () => {
-    let content = readeFile(path_mock + '/test.json')
-    return JSON.parse(content)
-}
-
-/**
  * 获得首页数据接口
  */
 module.exports.get_index_data = () => {
@@ -82,15 +74,7 @@ module.exports.get_chapterLength_data = () => {
  * 获得章节数据地址接口
  */
 module.exports.get_chapterUrl_data = (chapterId) => {
-    if(!chapterId) chapterId = 0
-    let content = readeFile(`${path_mock}/book/data${chapterId}.json`)
-    return content
-}
-/**
- * 获得章节数据接口
- */
-module.exports.get_chapter_data = (url) => {
-    if(!chapterId) chapterId = 0
+    if (!chapterId) chapterId = 0
     let content = readeFile(`${path_mock}/book/data${chapterId}.json`)
     return content
 }

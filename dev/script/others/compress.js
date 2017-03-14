@@ -13,11 +13,7 @@ let path_font_reader    = path_public + '/reader/font-icon'
 
 /** 压缩打包 index font-icon/style.css **/
 packcompressto.packTo_font(path_font_index, path_font_index)
-/** 压缩打包 ajaxIndex font-icon/style.css **/
-packcompressto.packTo_font(path_font_ajaxIndex, path_font_ajaxIndex)
 /** 压缩打包 book font-icon/style.css **/
 packcompressto.packTo_font(path_font_book, path_font_book)
-/** 压缩打包 ajaxBook font-icon/style.css **/
-packcompressto.packTo_font(path_font_ajaxBook, path_font_ajaxBook)
 /** 压缩打包 reader font-icon/style.css **/
 packcompressto.packTo_font(path_font_reader, path_font_reader)

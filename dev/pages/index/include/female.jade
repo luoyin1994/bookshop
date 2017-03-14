@@ -2,22 +2,16 @@ section.channel-female
   .channel-female--header
     .channel-female--header-title 女生最爱
   ul.list
-    each item,index in data.female.data
-      if index < max.item
-        li.book
-          .book--cover
-            img(src="#{item.cover}")
-            p.book--cover-finish
-          .book--info
-            p.book-title #{item.title}
-            p.book-author #{item.authors}
-            - item.summary = item.summary.split(/\s*\.*\s*$/).join('')
-            p.book-summary #{item.summary}
-            .book--tap
-              each tag,index in item.tags
-                //- 控制显示标签个数
-                if index < max.tag
-                  .book--tap-item #{tag}
+    li.book(v-for='(item,index) in data.female.data' v-if='index < bookLimitNum')
+      .book--cover
+        img(v-bind:src='item.cover')
+        p.book--cover-finish
+      .book--info
+        p.book-title {{item.title}}
+        p.book-author {{item.authors}}
+        p.book-summary {{item.summary}}
+        .book--tap
+          .book--tap-item(v-for='(tag,index) in item.tags' v-if='index < bookTagLimitNum') {{tag}}
   .channel-female--footer-next
     a.item.channel-female--footer-next-change(href='javascript:') 换一换
     a.item.channel-female--footer-next-channel(href='/female') 女生频道
