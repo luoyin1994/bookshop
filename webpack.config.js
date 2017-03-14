@@ -18,21 +18,17 @@ module.exports        = {
             {
                 test: /\.js$/,
                 loader : 'babel-loader',
-                exclude:['./node_modules/','./.idea'],
-                include:['./dev/'],
                 query:{
                     presets:['es2015']
                 }
             }, {
                 test: /\.styl$/,
-                exclude:['./node_modules/','./.idea'],
                 use : ExtractTextPlugin.extract({
                     use: 'css-loader!postcss-loader!stylus-loader'
                 })
             },
             {
                 test: /\.css$/,
-                exclude:['./node_modules/','./.idea'],
                 use : ExtractTextPlugin.extract({
                     use: 'css-loader!postcss-loader'
                 })
