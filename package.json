@@ -16,6 +16,7 @@
     "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.26.2",
     "extract-text-webpack-plugin": "^2.1.0",
+    "packcompressto": "^1.0.1",
     "postcss-loader": "^1.3.3",
     "stylus-loader": "^2.5.0",
     "webpack": "^2.2.1",
@@ -24,6 +25,6 @@
   "scripts": {
     "start": "forever start app.js",
     "stop": "forever stop app.js",
-    "webpack": "webpack -p -w"
+    "webpack": "node ./dev/script/others/compress.js && webpack -p"
   }
 }
