@@ -1,6 +1,9 @@
 header.top
-  a.top--back(href='/')
+  span.top--back
+    a(href='/').back
+      i.back-icon
   - var nav = title.replace('页','')
   span.top--title #{nav}
-  a.header-home(href='/')
-    i.icon.icon-home
+  span.header-home
+    a(href='/')
+      i.icon.icon-home

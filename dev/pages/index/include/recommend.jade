@@ -8,7 +8,7 @@ section.channel-recommend
   ul.list
     li.book(v-for='(item,index) in data.recommend.data' v-if='index === 0')
       .book--cover
-        span.book--img-order 1
+        span.book--img-order
         img(v-bind:src="item.cover" v-bind:alt="item.title")
         p.book--cover-finish
       .book--info

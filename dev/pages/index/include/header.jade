@@ -1,12 +1,14 @@
 header#header(style="transition-duration:0;transform:translate3d(0,0,0)")
   ul.header-tab
-    li.item
-      i.header-check.icon(v-bind:class='{"icon-check":headerCheckFlag === true, "icon-uncheck":headerCheckFlag === false}' v-on:click='headerCheckFlag = true')
+    //li.item
+    //  i.header-check.icon(v-bind:class='{"icon-check":headerCheckFlag === true, "icon-uncheck":headerCheckFlag === false}' v-on:click='headerCheckFlag = true')
+    li.item.header-user
+      a(href="#")
+        i.icon.icon-user
     li.item.item-bookstore
       a(href="javascript:" v-bind:class='{"select":selectBookShelfFlag===false}' v-on:click='headerTabSwitch(0)') 书城
     li.item.item-bookshelf
       a(href="javascript:" v-bind:class='{"select":selectBookShelfFlag===true}' v-on:click='headerTabSwitch(1)') 书架
-    li.item
-      a(href="#")
-        i.header-user.icon.icon-user
-    i.item-line-x(style="width:27px;transition-duration:0;transform:translate3d(0 ,0,0)")
+    li.item.header-search
+      a(href="/search")
+        i.icon.icon-search

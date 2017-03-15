@@ -1,37 +1,39 @@
 #header
   tab-item-sum = 4
+  font-size 16px
+  height 3rem
+  text-align center
   background-color #f6f6f6
   border-bottom 1px solid #eaeaea
-  text-align center
-  font-size 0
-  line-height 50px
-  height 50px
+  line-height @height
   .header-tab
-    position relative
     .item
       display inline-block
       width (100% / tab-item-sum)
-      font-size 16px
-      .header-check, .header-user
+      font-size 18px
+      .icon
         vertical-align middle
-        color #7b7b7b
-        font-size 20px
-      .header-check.icon-check
+        color #ababab
+      &.header-check.icon-check
         color #ff4e35
         cursor pointer
       a
+        margin-top = 2px
+        position relative
+        display block
         color #686868
+        margin-top margin-top
         /*防止点击a标签在某些浏览器出现高亮效果*/
-        -webkit-tap-highlight-color rgba(0,0,0,0)
+        //-webkit-tap-highlight-color rgba(0,0,0,0)
         &.select
           color #ff5027
-    .item-line-x
-      position absolute
-      font-size 16px
-      width 2em
-      border 2px solid #ccc
-      vertical-align bottom
-      left 0
-      bottom 0
-      -webkit-transition -webkit-transform .3s ease-out
-      border-radius 25%
+          &:after
+            content ''
+            position absolute
+            font-size 16px
+            width 3em
+            margin-left -2.5em
+            border-bottom 2px solid #cccccc
+            bottom (margin-top - 1px)
+            border-radius 2px
+

@@ -1,18 +1,39 @@
 header.top
-  a
-    display inline-block
-  height 40px
-  line-height 40px
+  header-height = 3rem
+  height header-height
+  line-height header-height
   background #efeff0
   border-bottom 1px solid #dddddd
+
   .top--back
     width 25%
     text-align center
     color #101010
-    &:before
-      vertical-align 0.25em
-      content '< 返回'
-      font-size 15px
+    .back
+      display inline-block
+      height 80%
+      width 80%
+      .back-icon
+        &:before
+          margin-top -1px
+          content ''
+          display inline-block
+          width 0.5em
+          height @width
+          border 2px solid
+          border-top-color transparent
+          border-right-color transparent
+          -webkit-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%) translate(12%)
+          -moz-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%) translate(12%)
+          -o-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%) translate(12%)
+          -ms-transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%) translate(12%)
+          transform translate(-50%, -50%) rotateZ(45deg) translate(12.5%, -12.5%) translate(12%)
+        &:after
+          content '返回'
+          display inline-block
+          position relative
+          top -0.3em
+
   .top--title
     vertical-align 0.2em
     text-align center
@@ -26,5 +47,5 @@ header.top
     .icon
       vertical-align 0
       height 40px
-      font 22px/40px a
+      font 22px / 40px a
 

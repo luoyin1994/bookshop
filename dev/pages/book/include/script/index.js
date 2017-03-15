@@ -17,7 +17,7 @@ new Vue({
 },
     mounted: function () {
         this.$nextTick(function () {
-            this.getData(22222, () => {
+            this.getData(288143, () => {
                 this.completeLoading()
             })
 

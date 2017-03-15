@@ -1,26 +1,20 @@
 .top-home
   background-color #ffffff
   border-bottom 10px solid #f5f5f5
-  .top-home--search
-    border 1px solid #ededed
-    margin 12px 10px
-    color #cccccc
-    font 11px / 2.2 a
-    .icon-search
-      padding 0 15px
-      vertical-align -1px
   .top-home--banner
     item-sum = 2
     width item-sum * 100%
-    a
-      .cover
-        float left
-        width (100% / item-sum)
-        display inline-block
+    li
+      display inline-block
+      width (100% / item-sum)
+      vertical-align top
+      a
+        width 100%
+        .cover
+          width 100%
   .top-home--btn
     item-sum = 5
-    font-size 0
-    margin 8px 0 5px
+    margin-top -0.5em
     .item
       text-align center
       display inline-block

@@ -1,7 +1,7 @@
 section.channel-special
   .channel-special--header
     h2.channel-special--header-title 精彩专题
-  ul.channel-spacial--banner
+  ul.channel-spacial--banner.animate-fade(style='height:180px')
     li(v-for='item in data.special.data').item
       a(href='#')
         img(:src='item.ad_pic_url')
