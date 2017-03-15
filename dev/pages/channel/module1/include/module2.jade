@@ -1,0 +1,18 @@
+section.channel-module
+  ul.list
+    each item,index in  data.items
+      if index < max.item
+        li.book(class='#{style}')
+          a(href='/book?id=#{item.fiction_id}').book--cover
+            img(src='#{item.cover}')
+            p.book--cover-finish
+          .book--info
+            p.book-title #{item.title}
+            p.book-author #{item.authors}
+            p.book-summary #{item.summary}
+            .book--tap
+              each tag,index in item.tags
+                //- 控制显示标签个数
+                if index < max.tag
+                  .book--tap-item #{tag}
+

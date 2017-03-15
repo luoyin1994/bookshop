@@ -29,6 +29,7 @@ app.get('/', (req, res) => {
             title: '书城首页',
         })
 })
+//免费频道页
 app.get('/channel/free', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
@@ -42,6 +43,7 @@ app.get('/channel/free', (req, res) => {
         }
     })
 })
+//女生频道页
 app.get('/channel/female', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
@@ -55,6 +57,7 @@ app.get('/channel/female', (req, res) => {
         }
     })
 })
+//男生频道页
 app.get('/channel/male', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
@@ -68,12 +71,27 @@ app.get('/channel/male', (req, res) => {
         }
     })
 })
+//本周最火页
+app.get('/channel/hot', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    }).render('channel/module1/index_hot', {
+        title: '本周最火',
+        style: 'male',
+        data : service.get_channel_data('hot'),
+        max  : {
+            item: 10,
+            tag : 3,
+        }
+    })
+
+})
 // 书籍详情页
 app.get('/book', (req, res) => {
     let params = req.query
     let id     = params.id
     service.get_book_data(id)((data) => {
-        let navTitle     = data.item.title
+        let navTitle = data.item.title
         if (navTitle.length > 8) navTitle = navTitle.slice(0, 7).concat('...')
         data.item.title = navTitle
         res.set({
@@ -125,6 +143,14 @@ dataApp.get('/male', (req, res) => {
         'Cache-Control': 'no-cache'
     })
         .send(service.get_channel_data('male'))
+})
+//获取本周最火数据
+dataApp.get('/hot', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    })
+        .send(service.get_channel_data('hot'))
+
 })
 //获取书籍详情页的数据
 dataApp.get('/book', (req, res) => {

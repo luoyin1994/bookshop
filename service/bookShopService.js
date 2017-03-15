@@ -74,7 +74,7 @@ module.exports.get_book_data = (id) => {
  * 获得章节数接口
  */
 module.exports.get_chapterLength_data = () => {
-    let content = readeFile(path_mock + '/book/chapter.json')
+    let content = readeFile(path_mock + '/reader/chapter.json')
     return content
 }
 /**
@@ -82,7 +82,7 @@ module.exports.get_chapterLength_data = () => {
  */
 module.exports.get_chapterUrl_data = (chapterId) => {
     if (!chapterId) chapterId = 0
-    let content = readeFile(`${path_mock}/book/data${chapterId}.json`)
+    let content = readeFile(`${path_mock}/reader/data${chapterId}.json`)
     return content
 }
 

@@ -1,6 +1,6 @@
 new Vue({
-    el     : '#app',
-    data   : {
+    el          : '#app',
+    data        : {
         data               : {},
         bookLimitNum       : 5,
         bookLimitNum2      : 6,
@@ -17,6 +17,8 @@ new Vue({
         selectBookShelfFlag: false,
         itemLineDuration   : '1s',
         itemLinePosition   : '227px',
+        /** recommend **/
+        recommentData      : {},
     },
     beforeCreate: function () {
         //获取浏览器页面可见高度和宽度
@@ -30,16 +32,17 @@ new Vue({
         //呈现loading效果
         document.write(_LoadingHtml);
     },
-    mounted: function () {
+    mounted     : function () {
         this.$nextTick(function () {
             this.getData(() => {
                 this.completeLoading()
+                this.changeChannel(1)
             })
 
         })
     },
-    methods: {
-        completeLoading : function () {
+    methods     : {
+        completeLoading: function () {
             var loadingMask = document.getElementById('loadingDiv');
             loadingMask.parentNode.removeChild(loadingMask);
         },
@@ -78,6 +81,61 @@ new Vue({
                 this.selectBookShelfFlag = true
                 this.shelfPosition       = '0'
                 this.storePosition       = '-100%'
+            }
+        },
+        /** recommend **/
+        changeChannel  : function (channelFlag) {
+            let data = this.data.recommend.data
+            seprateData(data, 0, (maleData, femaleData) => {
+                if (channelFlag == 1) {
+                    this.recommentData = maleData
+                } else if (channelFlag == 2) {
+                    this.recommentData = femaleData
+                }
+            })
+            /**
+             * 分离重磅推荐中的female和male数据
+             * @param data
+             * @param start
+             * @param cb
+             */
+            function seprateData(data, start, cb) {
+                let maleData   = {channel: 'male', data: []}
+                let femaleData = {channel: 'female', data: []}
+                findMale(data, start, cb)
+                /**
+                 * 递归查找female和male数据
+                 * @param data
+                 * @param start
+                 * @param cb
+                 * @returns {*}
+                 */
+                function findMale(data, start, cb) {
+                    if (typeof data[start] == 'undefined') return cb && cb(maleData, femaleData)
+                    let channel = data[start]['channel']
+                    // console.log(start)
+                    if (typeof channel.length == 'undefined' || channel.length == 0) {
+                        console.log('该数据不属于任何频道!')
+                    } else if (channel.length == 1) {
+                        if (parseInt(channel[0]) == 1) {
+                            maleData.data.push(data[start])
+                        }
+                        if (parseInt(channel[0]) == 2) {
+                            femaleData.data.push(data[start])
+                        }
+                    } else if (channel.length > 1) {
+                        channel.forEach(function (item, index) {
+                            if (parseInt(item) == 1 && maleData.data[maleData.data.length - 1]['title'] != data[start]['title']) {
+                                maleData.data.push(data[start])
+                            }
+                            if (parseInt(item) == 2 && femaleData.data[femaleData.data.length - 1]['title'] != data[start]['title']) {
+                                femaleData.data.push(data[start])
+                            }
+                        })
+                    }
+                    start = start + 1
+                    findMale(data, start, cb)
+                }
             }
         }
     }

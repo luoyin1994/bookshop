@@ -1,1 +1,1 @@
-import './include/script/index'
+// import './script/index'

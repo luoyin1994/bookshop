@@ -2,11 +2,11 @@ section.channel-recommend
   .channel-recommend--header
     h2.channel-recommend--header-title 重磅推荐
     .channel-recommend--header-change
-      a.item.channel-recommend--header-change-male(href='javascript:')
+      a.item.channel-recommend--header-change-male(href='javascript:' @click='changeChannel(1)')
       span.item.line-v
-      a.item.channel-recommend--header-change-female.select(href='javascript:')
+      a.item.channel-recommend--header-change-female.select(href='javascript:' @click='changeChannel(2)')
   ul.list
-    li.book(v-for='(item,index) in data.recommend.data' v-if='index === 0')
+    li.book(v-for='(item,index) in recommentData.data' v-if='index === 0')
       .book--cover
         span.book--img-order
         a(:href='"/book?id=" + item.fiction_id')
@@ -18,10 +18,13 @@ section.channel-recommend
         p.book-summary {{item.summary}}
         .book--tap
           .book--tap-item(v-for='(tag,index) in item.tags' v-if='index < bookTagLimitNum') {{tag}}
-    li.book.book--no-img(v-for='(item,index) in data.recommend.data' v-if='index > 0 && index < bookLimitNum')
+    li.book.book--no-img(v-for='(item,index) in recommentData.data' v-if='index > 0 && index < bookLimitNum')
       span.book--no-img-order 0{{index - 1 + 2}}
       .book--no-img-info
         a(:href='"/book?id=" + item.fiction_id')
           span.book--no-img-info-title {{item.title}}
         span.book--no-img-info-author {{item.authors}}
+  .channel-recommend--footer-next
+    a.item.channel-recommend--footer-next-change(href='javascript:') 换一换
+    a.item.channel-recommend--footer-next-channel(:href='"/channel/"+recommentData.channel') 查看更多
 

@@ -159,4 +159,20 @@
           font-weight 400
           margin-left 1em
           color rgba(0, 0, 0, 0.4)
-
+  .channel-recommend--footer-next
+    border-top 1px solid rgba(204, 204, 204, 0.79)
+    overflow hidden
+    .item
+      display inline-block
+      width 50%
+      text-align center
+      font 13px / 3 a
+      color rgba(0,0,0,0.9)
+      border-right 1px solid #ccc
+      &:first-child
+        margin-left -1px
+      &:last-child
+        border none
+      &.channel-recommend--footer-next-channel
+        &:after
+          content ' >>'
