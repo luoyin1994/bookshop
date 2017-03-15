@@ -5,9 +5,9 @@ section.channel-hot
     each item,index in data.hot.data
       if index < max.item
         li.book
-          a(href='localhost:5000/book?id=1').book--cover
+          a(:href='"/book?id=" + item.fiction_id').book--cover
             img(src='#{item.cover}')
-            p.book--cover-finish
+          p.book--cover-finish
           .book--info
             p.book-title #{item.title}
             p.book-author #{item.authors}

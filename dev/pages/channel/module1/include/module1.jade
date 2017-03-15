@@ -1,0 +1,23 @@
+each preItem,preIndex in data.items
+  if (typeof preItem.data.data[0].cover) !== 'undefined'
+    section.channel-module
+      .channel-module--header(class='#{style}')
+        h2.channel-module--header-title(class='#{style}') #{preItem.ad_name}
+      ul.list
+        each item,index in  preItem.data.data
+          if index < max.item
+            li.book(class='#{style}')
+              a(href='/book?id=#{item.fiction_id}').book--cover
+                img(src='#{item.cover}')
+                p.book--cover-finish
+              .book--info
+                p.book-title #{item.title}
+                p.book-author #{item.authors}
+                p.book-summary #{item.summary}
+                .book--tap
+                  each tag,index in item.tags
+                    //- 控制显示标签个数
+                    if index < max.tag
+                      .book--tap-item #{tag}
+      a.chanel-module--footer(href='/module')  查看更多
+

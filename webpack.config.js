@@ -8,6 +8,7 @@ module.exports        = {
         index    : [path_dev + '/style/pack_style.js', path_dev_pages + '/index/pack_style.js', path_dev_pages + '/index/pack_js.js'],
         book     : [path_dev + '/style/pack_style.js', path_dev_pages + '/book/pack_style.js', path_dev_pages + '/book/pack_js.js'],
         reader   : [path_dev + '/style/pack_style.js', path_dev_pages + '/reader/pack_style.js', path_dev_pages + '/reader/pack_js.js'],
+        free   : [path_dev + '/style/pack_style.js',path_dev + '/common-include/pack_style.js', path_dev_pages + '/channel/module1/pack_style.js', path_dev_pages + '/channel/module1/pack_js.js'],
     },
     output : {
         filename: '/[name]/bundle.min.js',

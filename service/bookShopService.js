@@ -39,6 +39,13 @@ module.exports.get_index_data = () => {
     return data
 }
 /**
+ * 获得频道数数据接口
+ */
+module.exports.get_channel_data = (channelName) => {
+    let content = readeFile(path_mock + `/channel/${channelName}.json`)
+    return JSON.parse(content)
+}
+/**
  * 获得图书详情页数据接口
  * @param id
  */
@@ -78,6 +85,7 @@ module.exports.get_chapterUrl_data = (chapterId) => {
     let content = readeFile(`${path_mock}/book/data${chapterId}.json`)
     return content
 }
+
 /**
  * 获得搜索数据接口
  * @param start

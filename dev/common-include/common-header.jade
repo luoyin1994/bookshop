@@ -1,9 +1,11 @@
-header.top
+- if(typeof style === 'undefined') style = ''
+header.top(class='#{style}')
   span.top--back
-    a(href='/').back
+    a(v-on:click='backUrl').back
       i.back-icon
-  - var nav = title.replace('页','')
-  span.top--title #{nav}
+  - var navTitle = ''
+  - (typeof datas === 'undefined') ?  navTitle = title.replace('页','') : navTitle = datas.item.title
+  span.top--title #{navTitle}
   span.header-home
     a(href='/')
       i.icon.icon-home

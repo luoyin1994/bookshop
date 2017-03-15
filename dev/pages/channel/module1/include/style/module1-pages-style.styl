@@ -1,34 +1,40 @@
-.channel-female
-  border-bottom 10px solid #f5f5f5
-  .channel-female--header
-    height 3em
-    line-height 3
-    border-bottom 1px solid #cccccc
-    .channel-female--header-title
-      font-size 16px
-      font-weight 400
-      float left
-      padding-left 4%
+.channel-module
+  &.free
+    border-color #67c87a
+  &.female
+    border-color #ff74ac
+  &.male
+    border-color #7b4cd2
+  .channel-module--header
+    &.free
+      color #67c87a
+    &.female
+      color #ff74ac
+    &.male
+      color #7b4cd2
+    .channel-module--header-title
+      &.free
+        border-color #67c87a
+      &.female
+        border-color #ff74ac
+      &.male
+        border-color #7b4cd2
   .list
     .book
-      padding 4% 0
-      margin 0 5.2%
-      border-bottom 1px solid rgba(204, 204, 204, 0.79)
-      book-cover-width = 80px
-      &:last-child
-        border none
-      .book--cover, .book--info
-        display inline-block
+      &.free
+        border-color #67c87a
+      &.female
+        border-color #ff74ac
+      &.male
+        border-color #7b4cd2
       .book--cover
-        position relative
-        width book-cover-width
-        height 1.3 *book-cover-width
-        cursor pointer
-        border-radius 1px
         img
-          border 1px solid #cccccc
-          width 100%
-          height 100%
+          &.free
+            border-color #67c87a
+          &.female
+            border-color #ff74ac
+          &.male
+            border-color #7b4cd2
         .book--cover-finish, .book--cover-unfinish
           position absolute
           bottom 0.3em
@@ -78,7 +84,7 @@
           white-space nowrap
           .book--tap-item
             font 10px / 1.3 a
-            max-width 4em //超过4字不显示
+            max-width 4em //超过6字不显示
             padding 0.2em 0.4em 0.3em
             margin-right 0.6em
             text-align center
@@ -90,21 +96,15 @@
             white-space nowrap
             &:last-child
               margin-right 0
-  .channel-female--footer-next
-    border-top 1px solid rgba(204, 204, 204, 0.79)
-    overflow hidden
-    .item
-      display inline-block
-      width 50%
-      text-align center
-      font 13px / 3 a
-      color rgba(0, 0, 0, 0.9)
-      border-right 1px solid #cccccc
-      &:first-child
-        margin-left -1px
-      &:last-child
-        border none
-      &.channel-female--footer-next-channel
-        &:after
-          content ' >>'
+  .chanel-module--footer
+    border-top 1px solid #f0f0f0
+    text-align center
+    line-height 3
+    display block
+    height @line-height em
+    font-size 13px
+    &:after
+      content ' >>'
+
+
 

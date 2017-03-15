@@ -9,7 +9,8 @@ section.channel-recommend
     li.book(v-for='(item,index) in data.recommend.data' v-if='index === 0')
       .book--cover
         span.book--img-order
-        img(v-bind:src="item.cover" v-bind:alt="item.title")
+        a(:href='"/book?id=" + item.fiction_id')
+          img(:src='item.cover')
         p.book--cover-finish
       .book--info
         p.book-title {{item.title}}
@@ -20,6 +21,7 @@ section.channel-recommend
     li.book.book--no-img(v-for='(item,index) in data.recommend.data' v-if='index > 0 && index < bookLimitNum')
       span.book--no-img-order 0{{index - 1 + 2}}
       .book--no-img-info
-        span.book--no-img-info-title {{item.title}}
+        a(:href='"/book?id=" + item.fiction_id')
+          span.book--no-img-info-title {{item.title}}
         span.book--no-img-info-author {{item.authors}}
 

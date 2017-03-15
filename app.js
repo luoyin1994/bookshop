@@ -29,14 +29,62 @@ app.get('/', (req, res) => {
             title: '书城首页',
         })
 })
+app.get('/channel/free', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    }).render('channel/module1/index', {
+        title: '免费频道',
+        style: 'free',
+        data : service.get_channel_data('free'),
+        max  : {
+            item: 5,
+            tag : 3,
+        }
+    })
+})
+app.get('/channel/female', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    }).render('channel/module1/index', {
+        title: '女生频道',
+        style: 'female',
+        data : service.get_channel_data('female'),
+        max  : {
+            item: 5,
+            tag : 3,
+        }
+    })
+})
+app.get('/channel/male', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    }).render('channel/module1/index', {
+        title: '男生频道',
+        style: 'male',
+        data : service.get_channel_data('male'),
+        max  : {
+            item: 5,
+            tag : 3,
+        }
+    })
+})
 // 书籍详情页
 app.get('/book', (req, res) => {
-    res.set({
-        'Cache-control': 'no-cache'
-    })
-        .render('book/book', {
-            title: '书籍详情页',
+    let params = req.query
+    let id     = params.id
+    service.get_book_data(id)((data) => {
+        let navTitle     = data.item.title
+        if (navTitle.length > 8) navTitle = navTitle.slice(0, 7).concat('...')
+        data.item.title = navTitle
+        res.set({
+            'Cache-control': 'no-cache'
         })
+            .render('book/book', {
+                title: '书籍详情页',
+                datas: data
+            })
+    })
+
 })
 // reader页
 app.get('/reader', (req, res) => {
@@ -51,11 +99,32 @@ app.get('/reader', (req, res) => {
 /** 获取数据路由 **/
 app.use('/data', dataApp)
 //获取首页的数据
-dataApp.get('/index', function (req, res) {
+dataApp.get('/index', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
     })
         .send(service.get_index_data())
+})
+//获取免费频道数据
+dataApp.get('/free', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    })
+        .send(service.get_channel_data('free'))
+})
+//获取女生频道数据
+dataApp.get('/female', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    })
+        .send(service.get_channel_data('female'))
+})
+//获取男生频道数据
+dataApp.get('/male', (req, res) => {
+    res.set({
+        'Cache-Control': 'no-cache'
+    })
+        .send(service.get_channel_data('male'))
 })
 //获取书籍详情页的数据
 dataApp.get('/book', (req, res) => {
