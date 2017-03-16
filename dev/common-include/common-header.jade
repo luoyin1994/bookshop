@@ -4,7 +4,14 @@ header.top(class='#{style}')
     a(v-on:click='backUrl').back
       i.back-icon
   - var navTitle = ''
-  - (typeof datas === 'undefined') ?  navTitle = title.replace('页','') : navTitle = datas.item.title
+  - if(typeof title === 'undefined')  title = ''
+  - if(typeof data !== 'undefined' && typeof data.label !== 'undefined' && channel != 'hot'){
+  -   navTitle = params.channel + '-' + data.label
+  - }else if(typeof datas === 'undefined') {
+  -   navTitle = title.replace('页','')
+  - }else{
+  -   navTitle = datas.item.title
+  - }
   span.top--title #{navTitle}
   span.header-home
     a(href='/')

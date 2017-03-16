@@ -1,8 +1,9 @@
 section.channel-module
   ul.list
     each item,index in  data.items
-      if index < max.item
-        li.book(class='#{style}')
+      - if(typeof max === 'undefined') max = {item:10,tag:3}
+      if (typeof item !== 'undefined' && index < max.item)
+        li.book(class='#{channel}')
           a(href='/book?id=#{item.fiction_id}').book--cover
             img(src='#{item.cover}')
             p.book--cover-finish

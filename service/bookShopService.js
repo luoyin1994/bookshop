@@ -71,6 +71,31 @@ module.exports.get_book_data = (id) => {
     }
 }
 /**
+ * 获得二级频道数据接口
+ * @param id
+ */
+module.exports.get_subChannel_data = (id) => {
+    return (cb) => {
+        if (!id) id = "11068"
+        http.request({
+            hostname: 'dushu.xiaomi.com',
+            port    : 80,
+            path    : '/store/v0/fiction/list/' + id
+        }, function (res) {
+            let str = ''
+            res.setEncoding('utf8')
+            res.on('data', (chunk) => {
+                str += chunk
+            })
+            res.on('end', () => {
+                cb(JSON.parse(str))
+            })
+        }).on('error', (err) => {
+            throw err.message
+        }).end()
+    }
+}
+/**
  * 获得章节数接口
  */
 module.exports.get_chapterLength_data = () => {

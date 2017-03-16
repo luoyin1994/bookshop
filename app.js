@@ -33,11 +33,11 @@ app.get('/', (req, res) => {
 app.get('/channel/free', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
-    }).render('channel/module1/index', {
-        title: '免费频道',
-        style: 'free',
-        data : service.get_channel_data('free'),
-        max  : {
+    }).render('channel/module1/index_free', {
+        title  : '免费频道',
+        channel: 'free',
+        data   : service.get_channel_data('free'),
+        max    : {
             item: 5,
             tag : 3,
         }
@@ -48,10 +48,10 @@ app.get('/channel/female', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
     }).render('channel/module1/index', {
-        title: '女生频道',
-        style: 'female',
-        data : service.get_channel_data('female'),
-        max  : {
+        title  : '女生频道',
+        channel: 'female',
+        data   : service.get_channel_data('female'),
+        max    : {
             item: 5,
             tag : 3,
         }
@@ -62,10 +62,10 @@ app.get('/channel/male', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
     }).render('channel/module1/index', {
-        title: '男生频道',
-        style: 'male',
-        data : service.get_channel_data('male'),
-        max  : {
+        title  : '男生频道',
+        channel: 'male',
+        data   : service.get_channel_data('male'),
+        max    : {
             item: 5,
             tag : 3,
         }
@@ -75,12 +75,34 @@ app.get('/channel/male', (req, res) => {
 app.get('/channel/hot', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
-    }).render('channel/module1/index_hot', {
-        title: '本周最火',
-        style: 'male',
-        data : service.get_channel_data('hot'),
-        max  : {
+    }).render('channel/module1/index_sub', {
+        title  : '本周最火',
+        channel: 'hot',
+        data   : service.get_channel_data('hot'),
+        max    : {
             item: 10,
+            tag : 3,
+        }
+    })
+
+})
+//次级免费频道页
+app.get('/subchannel/free', (req, res) => {
+    let params = req.query
+    let id     = params.id
+    let label  = params.label
+    let items = service.get_channel_data('free').items[id].data.data
+    console.log(params)
+    res.set({
+        'Cache-Control': 'no-cache'
+    }).render('channel/module1/index_sub', {
+        params : params,
+        data   : {
+            items: items,
+            label: label
+        },
+        max    : {
+            item: 15,
             tag : 3,
         }
     })
@@ -103,6 +125,25 @@ app.get('/book', (req, res) => {
             })
     })
 
+})
+// 二级频道页
+app.get('/subchannel', (req, res) => {
+    let params = req.query
+    let id     = params.id
+    service.get_subChannel_data(id)((data) => {
+        let navTitle = data.label
+        if (typeof navTitle !== 'undefined') {
+            if (navTitle.length > 4) navTitle = navTitle.slice(0, 3).concat('...')
+            data.label = navTitle
+        }
+        res.set({
+            'Cache-control': 'no-cache'
+        })
+            .render('channel/module1/index_sub', {
+                params: params,
+                data  : data
+            })
+    })
 })
 // reader页
 app.get('/reader', (req, res) => {
@@ -152,11 +193,22 @@ dataApp.get('/hot', (req, res) => {
         .send(service.get_channel_data('hot'))
 
 })
-//获取书籍详情页的数据
+//获取籍详情页的数据
 dataApp.get('/book', (req, res) => {
     let params = req.query
     let id     = params.id
     service.get_book_data(id)((data) => {
+        res.set({
+            'Cache-Control': 'no-cache'
+        })
+            .send(data)
+    })
+})
+//获取二级频道页的数据
+dataApp.get('/subchannel', (req, res) => {
+    let params = req.query
+    let id     = params.id
+    service.get_subChannel_data(id)((data) => {
         res.set({
             'Cache-Control': 'no-cache'
         })

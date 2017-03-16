@@ -6,7 +6,8 @@ section.shelf
   ul.shelf--book-list
     li.book(v-for='(item,index) in data.female.data' v-if='index < 1')
       .book--cover
-        img(v-bind:src='item.cover')
+        a(:href='"/book?id=" + item.fiction_id')
+          img(:src='item.cover')
         p.book--cover-finish
       .book--info
         p.book-title {{item.title}}
