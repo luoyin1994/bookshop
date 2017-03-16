@@ -14,6 +14,12 @@ module.exports        = {
             path_dev_pages + '/channel/module1/pack_js.js',
             path_dev + '/common-include/pack_style.js',
         ],
+        channel_catalog  : [
+            path_dev + '/style/pack_style.js',
+            path_dev_pages + '/channel/catalog/pack_style.js',
+            path_dev_pages + '/channel/catalog/pack_js.js',
+            path_dev + '/common-include/pack_style.js',
+        ],
     },
     output : {
         filename: '/[name]/bundle.min.js',

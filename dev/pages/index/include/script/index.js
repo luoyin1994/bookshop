@@ -84,6 +84,10 @@ new Vue({
                 this.storePosition       = '-100%'
             }
         },
+        /** top **/
+        switchBanner:function (bannerNum) {
+
+        },
         /** recommend **/
         changeChannel  : function (channelFlag) {
             let data = this.data.recommend.data

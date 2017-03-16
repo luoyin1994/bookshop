@@ -1,0 +1,14 @@
+section.catalog
+  ul
+    - var start = parseInt(data.id) - 6
+    - if(start < 0) start = 0
+    - var end = parseInt(data.id) + 14
+    - if(end > data.catalog.length - 1) end = data.catalog.length - 1
+    //-each item,index in data.catalog.slice(start,end)
+    //-  - if(start+index == data.id)  var selectFlag = 'select'
+    each item,index in data.catalog.slice(0,25)
+      - if(index == data.id)  var selectFlag = 'select'
+      li.item.item-chapter(class='#{selectFlag}' onclick='function(){window.location.href = "/reader?id=" + #{index}}')
+        span.chapter-title #{item.title}
+      - selectFlag = ''
+

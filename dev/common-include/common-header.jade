@@ -6,7 +6,11 @@ header.top(class='#{style}')
   - var navTitle = ''
   - if(typeof title === 'undefined')  title = ''
   - if(typeof data !== 'undefined' && typeof data.label !== 'undefined' && channel != 'hot'){
-  -   navTitle = params.channel + '-' + data.label
+  -   if(typeof params === 'undefined' ||typeof params.channel === 'undefined'){
+  -     navTitle = data.label
+  -   }else{
+  -     navTitle = params.channel + '-' + data.label
+  -   }
   - }else if(typeof datas === 'undefined') {
   -   navTitle = title.replace('页','')
   - }else{

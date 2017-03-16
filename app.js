@@ -29,6 +29,24 @@ app.get('/', (req, res) => {
             title: '书城首页',
         })
 })
+// banner跳转频道页
+app.get('/subchannel/banner', (req, res) => {
+    let params = req.query
+    let id     = params.id
+    service.get_subChannel_data(id)((data) => {
+        let navTitle = data.label
+        if (typeof navTitle !== 'undefined') {
+            if (navTitle.length > 8) navTitle = navTitle.slice(0, 7).concat('...')
+            data.label = navTitle
+        }
+        res.set({
+            'Cache-control': 'no-cache'
+        })
+            .render('channel/module1/index_banner', {
+                data: data
+            })
+    })
+})
 //免费频道页
 app.get('/channel/free', (req, res) => {
     res.set({
@@ -91,17 +109,16 @@ app.get('/subchannel/free', (req, res) => {
     let params = req.query
     let id     = params.id
     let label  = params.label
-    let items = service.get_channel_data('free').items[id].data.data
-    console.log(params)
+    let items  = service.get_channel_data('free').items[id].data.data
     res.set({
         'Cache-Control': 'no-cache'
     }).render('channel/module1/index_sub', {
-        params : params,
-        data   : {
+        params: params,
+        data  : {
             items: items,
             label: label
         },
-        max    : {
+        max   : {
             item: 15,
             tag : 3,
         }
@@ -147,11 +164,31 @@ app.get('/subchannel', (req, res) => {
 })
 // reader页
 app.get('/reader', (req, res) => {
+    let params = req.query
+    let id     = params.id
     res.set({
         'Cache-Control': 'no-cache'
     })
         .render('reader/reader', {
             title: 'reader',
+            chapterId   : id,
+        })
+})
+// reader目录页
+app.get('/reader/catalog', (req, res) => {
+    let params = req.query
+    let id     = params.id
+    let data   = service.get_chapterList_data()
+    res.set({
+        'Cache-Control': 'no-cache'
+    })
+        .render('channel/catalog/catalog', {
+            title: '目录',
+            data : {
+                catalog: data.item.toc,
+                id     : id,
+            }
+
         })
 })
 
@@ -216,11 +253,11 @@ dataApp.get('/subchannel', (req, res) => {
     })
 })
 //获取章节数的数据
-dataApp.get('/chapterLength', (req, res) => {
+dataApp.get('/chapterList', (req, res) => {
     res.set({
         'Cache-Control': 'no-cache'
     })
-        .send(service.get_chapterLength_data())
+        .send(service.get_chapterList_data())
 })
 //获取章节base64数据url的数据
 dataApp.get('/chapterUrl', (req, res) => {
@@ -234,3 +271,5 @@ dataApp.get('/chapterUrl', (req, res) => {
 /** 定义监听端口 **/
 app.listen(port)
 console.log(`server is started on http://localhost:${port}!`)
+
+

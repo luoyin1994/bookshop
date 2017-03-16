@@ -6,7 +6,7 @@ new Vue({
         hidepannel     : true,
         FontPannelFlag : false,
         bgColor        : '#ffffe9',
-        passageFontSize: '15px',
+        passageFontSize: '18px',
         nightFlag      : false,
         alertFlag      : false,
         chapterId      : 0,
@@ -23,6 +23,12 @@ new Vue({
         var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#f3f8ff;opacity:1;filter:alpha(opacity=80);z-index:10000;"><div style="position: absolute; cursor1: wait; left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px; background: #ffffff url(Image/loading.gif) no-repeat scroll 5px 10px; border: 2px solid #95b8e7; color: #696969; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';
         //呈现loading效果
         document.write(_LoadingHtml);
+    },
+    created     : function(){
+        var _this = this
+        this.$nextTick(function () {
+            _this.setChapterId()
+        })
     },
     mounted     : function () {
         var _this = this
@@ -63,9 +69,9 @@ new Vue({
             this.Util.StorageSetter('last_bgColor', this.bgColor)
         },
         enlargeFontSize : function (flag) {
-            var rate            = 1
-            var max             = 25
-            var min             = 10
+            var rate            = 2
+            var max             = 28
+            var min             = 12
             var passageFontSize = parseInt(this.passageFontSize)
             if (typeof flag == 'undefined' || flag > 0) {
                 if (passageFontSize >= max) return
@@ -74,7 +80,7 @@ new Vue({
                 if (passageFontSize <= min) return
                 this.passageFontSize = passageFontSize - rate + 'px'
             } else {
-                this.passageFontSize = '15px'
+                this.passageFontSize = '18px'
             }
             this.Util.StorageSetter('last_passageFontSize', this.passageFontSize)
         },
@@ -149,10 +155,10 @@ new Vue({
                 }
                 var getFictionInfo       = function () {
                     return new Promise(function (res, err) {
-                        $.get('/data/chapterLength', function (data) {
+                        $.get('/data/chapterList', function (data) {
                             if (data.result == 0) {
                                 //    todo 获取章节信息后的回调
-                                _this.chapterTotal = data.chapters.length
+                                _this.chapterTotal = data.item.toc.length
                                 res(data)
                             } else {
                                 err({msg: 'fail'})
@@ -208,5 +214,14 @@ new Vue({
                 }
             })()
         },
+        goCatalogPage   : function () {
+            window.location.href = '/reader/catalog?id=' + this.chapterId
+        },
+        setChapterId    : function () {
+            let id         = window.location.search
+            if(typeof id == 'undefined') return this.chapterId = 0
+            id = id.replace('?id=', '')
+            this.chapterId = id
+        }
     }
 })

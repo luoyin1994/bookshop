@@ -96,11 +96,11 @@ module.exports.get_subChannel_data = (id) => {
     }
 }
 /**
- * 获得章节数接口
+ * 获得章节列表接口
  */
-module.exports.get_chapterLength_data = () => {
+module.exports.get_chapterList_data = () => {
     let content = readeFile(path_mock + '/reader/chapter.json')
-    return content
+    return  JSON.parse(content)
 }
 /**
  * 获得章节数据地址接口

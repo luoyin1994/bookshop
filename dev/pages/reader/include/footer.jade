@@ -1,7 +1,7 @@
 footer#footer(v-show='topBottomFlag')
   ul
     li.item
-      i.icon.icon-catalog
+      i.icon.icon-catalog(@click='goCatalogPage')
     li.item(@click='toggleFontPannel')
       i.icon.icon-Aa
     li.item(@click='toggleDayNight')

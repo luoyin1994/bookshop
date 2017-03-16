@@ -1,4 +1,9 @@
-
+section.channel-module-top
+  .top-banner
+    img(src='#{data.banner}')
+  .top-info
+    each item in data.description.split('————')
+      p #{item}
 section.channel-module
   ul.list
     each item,index in  data.items
@@ -17,4 +22,4 @@ section.channel-module
                 //- 控制显示标签个数
                 if index < max.tag
                   .book--tap-item #{tag}
-
+  a.chanel-module--footer(href='/channel/free')  查看更多

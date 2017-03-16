@@ -1,8 +1,9 @@
 section.top-home
   ul.top-home--banner
-    li(v-for='item in data.top.data' v-if='trim(item.ad_pic_url) !== ""')
-      a(href="#")
+    li(v-for='(item,index) in data.top.data' v-if='trim(item.ad_pic_url) !== ""')
+      a(:href='"/subchannel/banner?id="+item.reference_id')
         img.cover(v-bind:src='item.ad_pic_url')
+
   ul.top-home--btn
     li.item
       a(href="/channel/free")
