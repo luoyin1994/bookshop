@@ -31,7 +31,6 @@ new Vue({
         searchData     : function (id, cb) {
             axios.get(`/data/book?id=${id}`)
                 .then((res) => {
-                    console.log(res.data)
                     this.data = res.data.item
                     cb && cb()
                 })

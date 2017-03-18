@@ -39,7 +39,6 @@ new Vue({
             this.tagsFadeOut()
             axios.get(`/data/search?key=${key}`)
                 .then((res) => {
-                    console.log(res.data)
                     this.data = res.data
                 })
                 .catch((err) => {

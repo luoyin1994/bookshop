@@ -68,8 +68,6 @@ new Vue({
                     this.maleData           = res.data.male.data.slice(-showNum2)
                     this.freeData           = res.data.free.data.slice(-showNum2)
                     this.hotData            = res.data.hot.data.slice(-showNum2)
-                    console.log('获取数据成功：')
-                    console.log(this.data)
                     cb && cb()
 
                 })
