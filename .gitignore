@@ -2,9 +2,3 @@
 node_modules
 *test*
 *bug.log*
-
-public
-!loader.js
-*\font-icon\
-!*.min.*
-!fonts
