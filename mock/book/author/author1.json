@@ -1,0 +1,568 @@
+{
+  "count": 10,
+  "result": 0,
+  "v": 0,
+  "items": [
+    {
+      "ad": 0,
+      "word_count": 2972324,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 2011848,
+      "score_count": 35,
+      "title": "钻石儿媳",
+      "on_sale": true,
+      "comment_count": 7,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 382,
+      "score": 7.48,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1393388120,
+      "finish": true,
+      "tags": [
+        "现言",
+        "都市言情"
+      ],
+      "price": 5,
+      "chapter_count": 383,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01GO2QI8Bbn/Mt43yXGUR7Mz5G.jpg",
+      "summary": "他是高政之子，是军人，为了她，他反抗家庭的阻力，为了他，她结婚怀孕几乎放弃自己的事业，困难没能折磨她",
+      "fiction_id": 35522,
+      "outer_id": "52bd3f5525ccbf2f060e12d6",
+      "latest": "大结局"
+    },
+    {
+      "ad": 0,
+      "word_count": 3645422,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 1818792,
+      "score_count": 48,
+      "title": "婚前婚后，大龄剩女",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 444,
+      "score": 7.16,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1453259267,
+      "finish": true,
+      "tags": [
+        "婚前婚后",
+        "大龄剩女",
+        "现代言情",
+        "都市言情",
+        "都市生活"
+      ],
+      "price": 5,
+      "chapter_count": 445,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01BwDOAghiB/qllMJGCrXWMDF1.jpg",
+      "summary": "24岁，大学毕业前夕，毕业论文被盗，男友被撬，差点连未来都葬送！30岁，无男友，被人指指点点，这闺女...",
+      "fiction_id": 317697,
+      "outer_id": "569e9d1750e3a468e9b8eb87",
+      "latest": "谁都不能阻止这一刻，大结"
+    },
+    {
+      "ad": 0,
+      "word_count": 1762946,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 596616,
+      "score_count": 61,
+      "title": "离婚向左再婚向右",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 234,
+      "score": 7.67,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1453261341,
+      "finish": true,
+      "tags": [
+        "离婚向左再婚向右",
+        "现代言情",
+        "都市言情",
+        "都市生活"
+      ],
+      "price": 5,
+      "chapter_count": 235,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01vWQeiNgUn/urBafbzMJb1kGl.jpg",
+      "summary": "一婚，鸡飞狗跳！老公出轨，婆婆在她怀孕进手术室时，拼命嚷着保小！不要她的命！姐要你的命！打老公打小三...",
+      "fiction_id": 317776,
+      "outer_id": "569e9d2050e3a468e9b8eb94",
+      "latest": "他一定很爱她"
+    },
+    {
+      "ad": 0,
+      "word_count": 2086668,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 1009304,
+      "score_count": 51,
+      "title": "孽婚--门当户对",
+      "on_sale": true,
+      "comment_count": 16,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 240,
+      "score": 8.78,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1393386245,
+      "finish": true,
+      "tags": [
+        "现言",
+        "总裁豪门"
+      ],
+      "price": 5,
+      "chapter_count": 241,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 120000,
+          "label": "总裁世家"
+        },
+        {
+          "category_id": 120100,
+          "label": "总裁豪门"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000700,
+          "label": "豪门世家"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01GcV0gZhJZ/quRHL0DjNkozJd.jpg",
+      "summary": "在她迈入大龄剩女的行列之后，天上竟然当头砸下一个钻石王老五给她，虽然这颗钻石有瑕疵，那怎么也比没有的",
+      "fiction_id": 24681,
+      "outer_id": "52bd3e8a25ccbf2f060e1156",
+      "latest": "嫁直连城"
+    },
+    {
+      "ad": 0,
+      "word_count": 2605919,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 203102,
+      "score_count": 16,
+      "title": "婚后宠爱之相亲以后",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 329,
+      "score": 9.0,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1459325621,
+      "finish": true,
+      "tags": [
+        "婚后宠爱之相亲以后",
+        "现代言情",
+        "都市言情",
+        "都市生活"
+      ],
+      "price": 5,
+      "chapter_count": 330,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01Vvur8H5Tn/Wh84oYwoo4kv6w.jpg",
+      "summary": "大学毕业乔荞嫁给了蒋晨。四年后乔荞抓住蒋晨出轨。离婚，相亲，却遭遇离婚极品男，乔荞总结：迟到，暴力男...",
+      "fiction_id": 317740,
+      "outer_id": "569e9d3b50e3a468e9b8ebbb",
+      "latest": "不曾经历，怎会懂得（全文大结局"
+    },
+    {
+      "ad": 0,
+      "word_count": 1026815,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 39596,
+      "score_count": 6,
+      "title": "婚前婚后之灰姑娘逆袭",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 146,
+      "score": 9.0,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1466566032,
+      "finish": true,
+      "tags": [
+        "婚前婚后之灰姑娘逆袭",
+        "现代言情",
+        "都市言情",
+        "都市生活"
+      ],
+      "price": 5,
+      "chapter_count": 147,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/fdsc3/p01vKLKiV82c/Pj2TPQo4JSo9Nm.jpg",
+      "summary": "陆懿净是个没亲爹，亲妈厌恶的灰姑娘，却嫁给了集团独子席东烈为妻？众人皆道：“不知道她祖上哪个坟头冒了...",
+      "fiction_id": 322731,
+      "outer_id": "5769128c50e3a46e4e313253",
+      "latest": "大结局"
+    },
+    {
+      "ad": 0,
+      "word_count": 832304,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 157548,
+      "score_count": 1,
+      "title": "兽婚",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 136,
+      "score": 6.0,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1407383310,
+      "finish": true,
+      "tags": [
+        "现言",
+        "都市言情"
+      ],
+      "price": 5,
+      "chapter_count": 137,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01GvqCzN348/Y4GrI4VCD0o0rA.jpg",
+      "summary": "如果未来可以预知，她还需要去做修复手术吗？谁都知道周一围玩林小婉的时候，那是真狠，周一围宠她的时候，...",
+      "fiction_id": 24543,
+      "outer_id": "52bd3ed525ccbf2f060e11e3",
+      "latest": "落幕"
+    },
+    {
+      "ad": 0,
+      "word_count": 373705,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 70812,
+      "score_count": 12,
+      "title": "囄婚",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 78,
+      "score": 8.33,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1393386422,
+      "finish": true,
+      "tags": [
+        "现言",
+        "都市言情"
+      ],
+      "price": 5,
+      "chapter_count": 79,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01nbBIVrFWW/p6xSVsNVbeAdBT.jpg",
+      "summary": "幸福的婚姻生活，不敌闺蜜小三的一句怀孕了。遭遇了双重背叛，父亲的突然离世，让她悲痛欲绝，母亲的良苦用...",
+      "fiction_id": 24574,
+      "outer_id": "52bd3e1b25ccbf2f060e108f",
+      "latest": "番外"
+    },
+    {
+      "ad": 0,
+      "word_count": 1990920,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 1400854,
+      "score_count": 12,
+      "title": "痒婚",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 233,
+      "score": 8.5,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1393386651,
+      "finish": true,
+      "tags": [
+        "现言",
+        "都市言情"
+      ],
+      "price": 5,
+      "chapter_count": 234,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p011MaE3Y0DX/qiALUKIqe1GHXL.jpg",
+      "summary": "一个男人最高的品味就是他选择的女人。一个男人的房子、车子、打火机、西装，当然都可以成为他品味的一部分...",
+      "fiction_id": 24614,
+      "outer_id": "52bd3e4b25ccbf2f060e10e3",
+      "latest": "下辈子还在一起"
+    },
+    {
+      "ad": 0,
+      "word_count": 919775,
+      "owner": 0,
+      "allow_discount": 0,
+      "ad_time": 0,
+      "click": 58954,
+      "score_count": 2,
+      "title": "结婚十年-枕边人",
+      "on_sale": true,
+      "comment_count": 0,
+      "has_ad": 0,
+      "ad_duration": 0,
+      "latest_id": 130,
+      "score": 8.0,
+      "allow_free_read": 1,
+      "rights_id": 10039,
+      "channel": [
+        2
+      ],
+      "updated": 1407385665,
+      "finish": true,
+      "tags": [
+        "现言",
+        "都市言情"
+      ],
+      "price": 5,
+      "chapter_count": 131,
+      "authors": "简思",
+      "categories": [
+        {
+          "category_id": 100000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 100100,
+          "label": "都市言情"
+        },
+        {
+          "category_id": 18000000,
+          "label": "现代言情"
+        },
+        {
+          "category_id": 18000100,
+          "label": "都市生活"
+        }
+      ],
+      "rights": "潇湘书院",
+      "level": 0,
+      "cover": "http://cover.read.duokan.com/mfsv2/download/s010/p01BNV34RKyc/Eatgs9a66m2v0i.jpg",
+      "summary": "艾玛，纯洁的裸婚也很给力哇，一千块钱加一辆自行车就把老婆搞到手了！是爱情廉价，还是她太容易被欺骗？她...",
+      "fiction_id": 24370,
+      "outer_id": "52bd3f1225ccbf2f060e1253",
+      "latest": "大结局"
+    }
+  ],
+  "total": 0,
+  "more": true
+}

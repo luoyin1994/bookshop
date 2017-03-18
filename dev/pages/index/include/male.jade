@@ -2,11 +2,12 @@ section.channel-male
   .channel-male--header
     .channel-male--header-title 男生最爱
   ul.list
-    li.book(v-for='(item,index) in data.male.data' v-if='index < bookLimitNum')
+    li.book(v-for='(item,index) in maleData')
       .book--cover
-        a(:href='"/book?id=" + item.fiction_id')
-          img(:src='item.cover')
-        p.book--cover-finish
+        .book-cover
+          a(:href='"/book?id=" + item.fiction_id')
+            img(:src='item.cover')
+          p.book--cover-finish {{(item.finish)?"完结":"未完结"}}
       .book--info
         p.book-title {{item.title}}
         p.book-author {{item.authors}}
@@ -14,6 +15,6 @@ section.channel-male
         .book--tap
           .book--tap-item(v-for='(tag,index) in item.tags' v-if='index < bookTagLimitNum') {{tag}}
   .channel-male--footer-next
-    a.item.channel-male--footer-next-change(href='javascript:') 换一换
+    a.item.channel-male--footer-next-change(href='javascript:' @click='dataExchange("male")') 换一换
     a.item.channel-male--footer-next-channel(href='/channel/male') 男生频道
 

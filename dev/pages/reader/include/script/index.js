@@ -24,18 +24,13 @@ new Vue({
         //呈现loading效果
         document.write(_LoadingHtml);
     },
-    created     : function(){
-        var _this = this
-        this.$nextTick(function () {
-            _this.setChapterId()
-        })
-    },
     mounted     : function () {
         var _this = this
         this.$nextTick(function () {
             this.ReaderModel()
             this.Util()
             this.getStorage()
+            _this.setChapterId()
             this.ReaderModel.init(function (data) {
                 _this.fictionData = data
                 _this.completeLoading()
@@ -114,10 +109,12 @@ new Vue({
                 //防止域名重复，导致覆盖
                 var prefix        = 'html5_reader_'
                 var StorageGetter = function (key) {
+                    var val = localStorage.getItem(prefix + key)
+                    if(isNaN(val)) return 0
                     return localStorage.getItem(prefix + key)
                 }
                 var StorageSetter = function (key, val) {
-                    return localStorage.setItem(prefix + key, val)
+                    return localStorage.setItem(prefix + key, Number(val))
                 }
                 var getBSONP      = function (url, callback) {
                     return $.jsonp({
@@ -168,6 +165,7 @@ new Vue({
                 }
                 var getCurChapterContent = function () {//外边加一层function，return内容，需要的时候才创建
                     return new Promise(function (res, err) {
+                        if(isNaN(_this.chapterId)) _this.chapterId = 0
                         $.get('/data/chapterUrl?chapter_id=' + _this.chapterId, function (data) {
                             if (data.result == 0) {
                                 var url = data.url
@@ -219,9 +217,9 @@ new Vue({
         },
         setChapterId    : function () {
             let id         = window.location.search
-            if(typeof id == 'undefined') return this.chapterId = 0
+            if(typeof id == 'undefined') return
             id = id.replace('?id=', '')
-            this.chapterId = id
+            this.chapterId = parseInt(id)
         }
     }
 })

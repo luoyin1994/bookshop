@@ -5,16 +5,33 @@ let path_out          = __dirname + '/public'
 let ExtractTextPlugin = require('extract-text-webpack-plugin')
 module.exports        = {
     entry  : {
-        index : [path_dev + '/style/pack_style.js', path_dev_pages + '/index/pack_style.js', path_dev_pages + '/index/pack_js.js'],
-        book  : [path_dev + '/style/pack_style.js', path_dev_pages + '/book/pack_style.js', path_dev_pages + '/book/pack_js.js'],
-        reader: [path_dev + '/style/pack_style.js', path_dev_pages + '/reader/pack_style.js', path_dev_pages + '/reader/pack_js.js'],
-        channel_module1  : [
+        index          : [
+            path_dev + '/style/pack_style.js',
+            path_dev_pages + '/index/pack_style.js',
+            path_dev_pages + '/index/pack_js.js'
+        ],
+        book           : [
+            path_dev + '/style/pack_style.js',
+            path_dev_pages + '/book/pack_style.js',
+            path_dev_pages + '/book/pack_js.js'
+        ],
+        reader         : [
+            path_dev + '/style/pack_style.js',
+            path_dev_pages + '/reader/pack_style.js',
+            path_dev_pages + '/reader/pack_js.js'
+        ],
+        search         : [
+            path_dev + '/style/pack_style.js',
+            path_dev_pages + '/search/pack_style.js',
+            path_dev_pages + '/search/pack_js.js',
+        ],
+        channel_module1: [
             path_dev + '/style/pack_style.js',
             path_dev_pages + '/channel/module1/pack_style.js',
             path_dev_pages + '/channel/module1/pack_js.js',
             path_dev + '/common-include/pack_style.js',
         ],
-        channel_catalog  : [
+        channel_catalog: [
             path_dev + '/style/pack_style.js',
             path_dev_pages + '/channel/catalog/pack_style.js',
             path_dev_pages + '/channel/catalog/pack_js.js',

@@ -1,7 +1,16 @@
-extends ../../../layout
-
+extends ../../layout
+block style
+  - var name = 'search'
+  link(rel='stylesheet' href='/#{name}/font-icon/font.min.css')
+  link(rel='stylesheet' href='/#{name}/main.min.css')
 block content
-    //- jade的each可以遍历数组和对象，默认value在前
-    //- jade的each和for效果一样
-    each item in data
-        h1 #{item.intro}
+  #app
+    .header
+      include include/search-header
+    .container
+      include include/search-tabs
+      include include/search-content
+block script
+  script(src='//cdn.bootcss.com/vue/2.2.1/vue.min.js')
+  script(src='//cdn.bootcss.com/axios/0.15.3/axios.min.js')
+  script(src='/#{name}/bundle.min.js')

@@ -1,0 +1,102 @@
+{
+  "count": 8,
+  "code": 0,
+  "ads": [
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|tabs]]",
+      "ad_type": 100,
+      "ad_priority": 1,
+      "width": 0,
+      "reference_id": "33494",
+      "ad_pic_url": "",
+      "ad_name": "如果蜗牛有爱情",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|book-detail]]",
+      "ad_type": 100,
+      "ad_priority": 2,
+      "width": 0,
+      "reference_id": "270885",
+      "ad_pic_url": "",
+      "ad_name": "择天记",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|book-detail]]",
+      "ad_type": 100,
+      "ad_priority": 3,
+      "width": 0,
+      "reference_id": "270693",
+      "ad_pic_url": "",
+      "ad_name": "一夜弃妃",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|none]]",
+      "ad_type": 100,
+      "ad_priority": 4,
+      "width": 0,
+      "reference_id": "319207",
+      "ad_pic_url": "",
+      "ad_name": "诛仙",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|book-detail]]",
+      "ad_type": 100,
+      "ad_priority": 5,
+      "width": 0,
+      "reference_id": "26728",
+      "ad_pic_url": "",
+      "ad_name": "豪门小老婆",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|custom]]",
+      "ad_type": 100,
+      "ad_priority": 6,
+      "width": 0,
+      "reference_id": "302633",
+      "ad_pic_url": "",
+      "ad_name": "异能小农民",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "[[type|book-detail]]",
+      "ad_type": 100,
+      "ad_priority": 7,
+      "width": 0,
+      "reference_id": "43141",
+      "ad_pic_url": "",
+      "ad_name": "武动乾坤",
+      "height": 0,
+      "size": 0
+    },
+    {
+      "keyword": "df_search_tags",
+      "hidden_info": "",
+      "ad_type": 100,
+      "ad_priority": 8,
+      "width": 0,
+      "reference_id": "44369",
+      "ad_pic_url": "",
+      "ad_name": "别那么骄傲",
+      "height": 0,
+      "size": 0
+    }
+  ]
+}

@@ -4,11 +4,13 @@ section.shelf
   //    i.icon.icon-search
   //    span 输入书名/作者/关键字
   ul.shelf--book-list
-    li.book(v-for='(item,index) in data.female.data' v-if='index < 1')
+    li.book(v-for='(item,index) in data.recommend.data' v-if='index < 9 && index > 2')
       .book--cover
-        a(:href='"/book?id=" + item.fiction_id')
-          img(:src='item.cover')
-        p.book--cover-finish
+        .book-cover
+          a(href='/reader')
+            img(:src='item.cover')
+          //-a(:href='"/book?id=" + item.fiction_id')
+          p.book--cover-finish {{(item.finish)?"完结":"未完结"}}
       .book--info
         p.book-title {{item.title}}
         p.book-author {{item.authors}}

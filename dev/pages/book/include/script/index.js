@@ -17,7 +17,7 @@ new Vue({
     },
     mounted     : function () {
         this.$nextTick(function () {
-            this.getData(288143, () => {
+            this.searchData(288143, () => {
                 this.completeLoading()
             })
 
@@ -28,7 +28,7 @@ new Vue({
             var loadingMask = document.getElementById('loadingDiv');
             loadingMask.parentNode.removeChild(loadingMask);
         },
-        getData        : function (id, cb) {
+        searchData     : function (id, cb) {
             axios.get(`/data/book?id=${id}`)
                 .then((res) => {
                     console.log(res.data)

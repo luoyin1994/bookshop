@@ -1,0 +1,2 @@
+section.search-tabs(v-bind:style='hide')
+  span.item(v-for='item in tagData.ads'  v-on:click='searchData(item.ad_name)') {{item.ad_name}}

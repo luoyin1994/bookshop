@@ -1,4 +1,4 @@
-import './main.styl'
+import './style/main.styl'
 /** 首页书城样式 **/
 import './include/style/header.styl'
 import './include/style/top.styl'

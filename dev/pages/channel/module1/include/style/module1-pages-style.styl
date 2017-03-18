@@ -28,26 +28,22 @@
       &.male
         border-color #7b4cd2
       .book--cover
-        img
-          &.free
-            border-color #67c87a
-          &.female
-            border-color #ff74ac
-          &.male
-            border-color #7b4cd2
-        .book--cover-finish, .book--cover-unfinish
-          position absolute
-          bottom 0.3em
-          left 0.5em
-          font 12px / 1 a
-          color #ffffff
-          background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4))
-        .book--cover-finish
-          &:after
-            content '完结'
-        .book--cover-unfinish
-          &:after
-            content '未完结'
+        width 20%
+        .book-cover
+          img
+            &.free
+              border-color #67c87a
+            &.female
+              border-color #ff74ac
+            &.male
+              border-color #7b4cd2
+          .book--cover-finish
+            position absolute
+            bottom 0.3em
+            left 0.5em
+            font 12px / 1 a
+            color #ffffff
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4))
       .book--info
         margin-left 22px
         vertical-align top

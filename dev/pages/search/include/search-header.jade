@@ -1,0 +1,10 @@
+section.header-search
+  .search
+    span.item.search-home(@click='backHome')
+      i.icon.icon-home
+    span.item.search-box
+      i.icon.icon-search
+      input(type='text' placeholder='输入书名/作者/关键字' v-model='key')
+    span.item.search-botton.button(@click='searchData(key)') 开始
+
+

@@ -6,25 +6,27 @@ section.channel-recommend
       span.item.line-v
       a.item.channel-recommend--header-change-female(href='javascript:' v-bind:class='{select : isRecommendMale==false}' @click='changeChannel(2)')
   ul.list
-    li.book(v-for='(item,index) in recommendData.data' v-if='index === 0')
+    li.book-2(v-for='(item,index) in recommendDataTotal.data' v-if='index === 0')
       .book--cover
-        span.book--img-order
-        a(:href='"/book?id=" + item.fiction_id')
-          img(:src='item.cover')
-        p.book--cover-finish
+        .book-cover
+          span.book--img-order
+          a(:href='"/book?id=" + item.fiction_id')
+            img(:src='item.cover')
+          p.book--cover-finish {{(item.finish)?"完结":"未完结"}}
       .book--info
         p.book-title {{item.title}}
         p.book-author {{item.authors}}
         p.book-summary {{item.summary}}
         .book--tap
           .book--tap-item(v-for='(tag,index) in item.tags' v-if='index < bookTagLimitNum') {{tag}}
-    li.book.book--no-img(v-for='(item,index) in recommendData.data' v-if='index > 0 && index < bookLimitNum')
-      span.book--no-img-order 0{{index - 1 + 2}}
-      .book--no-img-info
-        a(:href='"/book?id=" + item.fiction_id')
-          span.book--no-img-info-title {{item.title}}
-        span.book--no-img-info-author {{item.authors}}
+    ul.book--no-img-wrap
+      li.book--no-img(v-for='(item,index) in recommendDataTotal.data' v-if='index > 0 && index < bookLimitNum')
+        span.book--no-img-order 0{{index - 1 + 2}}
+        .book--no-img-info
+          a(:href='"/book?id=" + item.fiction_id')
+            span.book--no-img-info-title {{item.title}}
+          span.book--no-img-info-author {{item.authors}}
   .channel-recommend--footer-next
-    a.item.channel-recommend--footer-next-change(href='javascript:') 换一换
-    a.item.channel-recommend--footer-next-channel(:href='"/channel/"+recommendData.channel') 查看更多
+    a.item.channel-recommend--footer-next-change(href='javascript:' @click='dataExchange("recommend")') 换一换
+    a.item.channel-recommend--footer-next-channel(:href='"/channel/"+recommendDataTotal.channel') 查看更多
 

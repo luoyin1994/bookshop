@@ -2,9 +2,9 @@ header#header(style="transition-duration:0;transform:translate3d(0,0,0)")
   ul.header-tab
     //li.item
     //  i.header-check.icon(v-bind:class='{"icon-check":headerCheckFlag === true, "icon-uncheck":headerCheckFlag === false}' v-on:click='headerCheckFlag = true')
-    li.item.header-user
-      a(href="#")
-        i.icon.icon-user
+    //li.item.header-user
+    //  a(href="#")
+    //    i.icon.icon-user
     li.item.item-bookstore(v-bind:class='{"select":selectBookShelfFlag===false}' v-on:click='headerTabSwitch(0)')
       a(href="javascript:" ) 书城
     li.item.item-bookshelf(v-bind:class='{"select":selectBookShelfFlag===true}' v-on:click='headerTabSwitch(1)' )

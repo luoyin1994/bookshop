@@ -1,0 +1,10 @@
+section.search--content(v-bind:style='fadeIn')
+  ul.search--book-list
+    li.book(v-for='(item,index) in data.items')
+      .book--cover
+        a(:href='"/book?id=" + item.source_id')
+          img(:src='item.cover')
+      .book--info
+        p.book-title {{item.title}}
+        p.book-author {{item.role[0][1]}}
+        p.book-summary {{item.intro}}

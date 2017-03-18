@@ -71,16 +71,39 @@ module.exports.get_book_data = (id) => {
     }
 }
 /**
- * 获得二级频道数据接口
+ * 获得作者书籍数据接口
  * @param id
+ */
+
+module.exports.get_author_book_data = () => {
+    let content = readeFile(path_mock + '/book/author/author1.json')
+    return JSON.parse(content)
+}
+/**
+ * 获得章节列表接口
+ */
+module.exports.get_chapterList_data = () => {
+    let content = readeFile(path_mock + '/reader/chapter.json')
+    return JSON.parse(content)
+}
+/**
+ * 获得章节数据地址接口
+ */
+module.exports.get_chapterUrl_data = (chapterId) => {
+    if (!chapterId) chapterId = 0
+    let content = readeFile(`${path_mock}/reader/data${chapterId}.json`)
+    return content
+}
+/**
+ * 获得banner频道数据接口
  */
 module.exports.get_subChannel_data = (id) => {
     return (cb) => {
-        if (!id) id = "11068"
+        if (!id) id = "11439"
         http.request({
             hostname: 'dushu.xiaomi.com',
             port    : 80,
-            path    : '/store/v0/fiction/list/' + id
+            path    : '/store/v0/fiction/list/' + id + '?start=0&count=10'
         }, function (res) {
             let str = ''
             res.setEncoding('utf8')
@@ -96,21 +119,12 @@ module.exports.get_subChannel_data = (id) => {
     }
 }
 /**
- * 获得章节列表接口
+ * 获得搜索标签数据接口
  */
-module.exports.get_chapterList_data = () => {
-    let content = readeFile(path_mock + '/reader/chapter.json')
-    return  JSON.parse(content)
+module.exports.get_search_ad_data = () => {
+    let content = readeFile(path_mock + '/search/ad_tags.json')
+    return JSON.parse(content)
 }
-/**
- * 获得章节数据地址接口
- */
-module.exports.get_chapterUrl_data = (chapterId) => {
-    if (!chapterId) chapterId = 0
-    let content = readeFile(`${path_mock}/reader/data${chapterId}.json`)
-    return content
-}
-
 /**
  * 获得搜索数据接口
  * @param start
@@ -123,7 +137,7 @@ module.exports.get_search_data = (start, end, keyword) => {
         let data         = {
             s    : keyword,
             start: start,
-            end  : end
+            count: end
         }
         let content      = qs.stringify(data)
         //进行http请求
@@ -131,7 +145,7 @@ module.exports.get_search_data = (start, end, keyword) => {
             //主机地址
             hostname: 'dushu.xiaomi.com',
             port    : 80,
-            path    : '/store/v0/lib/query/onebox?' + content
+            path    : '/store/v0/lib/query/onebox?' + content + "&source=2%2C5"
         }
         let req_obj      = http.request(http_request, (res) => {
             let content = ''
@@ -140,7 +154,7 @@ module.exports.get_search_data = (start, end, keyword) => {
                 content += chunk
             })
             res.on('end', () => {
-                cb(content)
+                cb(JSON.parse(content))
             })
         })
         req_obj.on('error', () => {

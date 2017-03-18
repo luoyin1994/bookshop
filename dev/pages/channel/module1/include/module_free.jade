@@ -7,9 +7,10 @@ each preItem,preIndex in data.items
         each item,index in  preItem.data.data
           if index < max.item
             li.book(class='#{channel}')
-              a(href='/book?id=#{item.fiction_id}').book--cover
-                img(src='#{item.cover}')
-                p.book--cover-finish
+              .book--cover
+                a(href='/book?id=#{item.fiction_id}').book-cover
+                  img(src='#{item.cover}')
+                  p.book--cover-finish #{(item.finish)?"完结":"未完结"}
               .book--info
                 p.book-title #{item.title}
                 p.book-author #{item.authors}

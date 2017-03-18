@@ -8,7 +8,7 @@ section.catalog
     //-  - if(start+index == data.id)  var selectFlag = 'select'
     each item,index in data.catalog.slice(0,25)
       - if(index == data.id)  var selectFlag = 'select'
-      li.item.item-chapter(class='#{selectFlag}' onclick='function(){window.location.href = "/reader?id=" + #{index}}')
+      li.item.item-chapter(class='#{selectFlag}' onclick='window.location.href = "/reader?id=" + #{index}')
         span.chapter-title #{item.title}
       - selectFlag = ''
 

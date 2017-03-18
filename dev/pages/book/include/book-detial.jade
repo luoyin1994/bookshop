@@ -8,7 +8,7 @@ section.book-detial
       .book-info
         h3.title #{data.title}
         p.authors
-          span.author #{data.authors}
+          a(href='/book/author?author=#{data.authors}').author #{data.authors}
         .grade
           span.read #{data.score_count}个评价
         p.price 价格：#{data.price}书币/千字

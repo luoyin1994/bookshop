@@ -17,9 +17,18 @@ new Vue({
         selectBookShelfFlag: false,
         itemLineDuration   : '1s',
         itemLinePosition   : '227px',
+        /** hot **/
+        hotData            : {},
         /** recommend **/
         recommendData      : {},
-        isRecommendMale      : true,
+        recommendDataTotal : [],
+        isRecommendMale    : true,
+        /** female **/
+        femaleData         : {},
+        /** male **/
+        maleData           : {},
+        /** free **/
+        freeData           : {},
     },
     beforeCreate: function () {
         //获取浏览器页面可见高度和宽度
@@ -35,8 +44,9 @@ new Vue({
     },
     mounted     : function () {
         this.$nextTick(function () {
-            this.getData(() => {
+            this.searchData(() => {
                 this.completeLoading()
+                //默认重磅推荐为男生频道
                 this.changeChannel(1)
             })
 
@@ -47,13 +57,21 @@ new Vue({
             let loadingMask = document.getElementById('loadingDiv');
             loadingMask.parentNode.removeChild(loadingMask);
         },
-        getData        : function (cb) {
+        searchData     : function (cb) {
             axios.get('/data/index')
                 .then((res) => {
-                    this.data = res.data
+                    this.data               = res.data
+                    //为主页每个频道从最后截取showNum个数据
+                    let showNum             = 5
+                    let showNum2            = 6
+                    this.femaleData         = res.data.female.data.slice(-showNum2)
+                    this.maleData           = res.data.male.data.slice(-showNum2)
+                    this.freeData           = res.data.free.data.slice(-showNum2)
+                    this.hotData            = res.data.hot.data.slice(-showNum2)
                     console.log('获取数据成功：')
                     console.log(this.data)
                     cb && cb()
+
                 })
                 .catch((err) => {
                     console.log(err)
@@ -62,16 +80,21 @@ new Vue({
         trim           : function (str) {
             return str.trim()
         },
+        //换一换功能
+        dataExchange   : function (channelName) {
+            let showNum = this[channelName + 'Data'].length
+            let result  = ''
+            if (channelName == 'recommend') {
+                showNum            = 5
+                result             = this.recommendDataTotal.data.splice(0, showNum)
+                this.recommendDataTotal.data = this.recommendDataTotal.data.concat(result)
+            } else {
+                result                      = this.data[channelName].data.splice(0, showNum)
+                this.data[channelName].data = this.data[channelName].data.concat(result)
+            }
+            this[channelName + 'Data'] = result
+        },
         /** header **/
-        // checked: function (checkFlag) {
-        //     this.headerCheckFlag = true
-        // },
-        // toggle: function (flag) {
-        //     this[flag] = !this[flag]
-        // },
-        // indexFlag     : function (tagsFlag, index) {
-        //     return this[tagsFlag][index]
-        // },
         headerTabSwitch: function (index) {
             if (index == 0) {
                 this.selectBookShelfFlag = false
@@ -85,19 +108,21 @@ new Vue({
             }
         },
         /** top **/
-        switchBanner:function (bannerNum) {
+        switchBanner   : function (bannerNum) {
 
         },
+        /** female **/
+
         /** recommend **/
-        changeChannel  : function (channelFlag) {
+        changeChannel: function (channelFlag) {
             let data = this.data.recommend.data
             seprateData(data, 0, (maleData, femaleData) => {
                 if (channelFlag == 1) {
-                    this.isRecommendMale = true
-                    this.recommendData = maleData
+                    this.isRecommendMale    = true
+                    this.recommendDataTotal = maleData
                 } else if (channelFlag == 2) {
-                    this.isRecommendMale = false
-                    this.recommendData = femaleData
+                    this.isRecommendMale    = false
+                    this.recommendDataTotal = femaleData
                 }
             })
             /**
