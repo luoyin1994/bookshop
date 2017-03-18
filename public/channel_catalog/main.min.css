@@ -49,6 +49,16 @@ html {
 .list .book--no-img .book--info {
   padding-right: 2% !important;
 }
+.book-2 .book-summary,
+.book .book-summary {
+  line-height: 1.4 !important;
+  height: 2.6em !important;
+  margin: 0.08em 0 0.55em !important;
+}
+.book-2 .book--tap,
+.book .book--tap {
+  margin: 0 !important;
+}
 @media screen and (max-width: 340px) {
   .book-2,
   .book {
@@ -86,7 +96,7 @@ html {
   .book-table li {
     width: 16.666666666666668% !important;
   }
-  .list .book {
+  .book {
     -webkit-transform: scale(1.1) !important;
             transform: scale(1.1) !important;
     margin: 0 5% !important;
@@ -95,23 +105,23 @@ html {
     display: inline-block !important;
     border: none !important;
   }
-  .list .book .book--cover {
+  .book .book--cover {
     width: 30% !important;
   }
-  .list .book .book--info {
+  .book .book--info {
     width: 70% !important;
     display: inline-block !important;
   }
-  .list .book-2 {
+  .book-2 {
     -webkit-transform: scale(1.1) !important;
             transform: scale(1.1) !important;
     margin: 1% 7% 0 !important;
     border: none !important;
   }
-  .list .book--no-img-wrap {
+  .book--no-img-wrap {
     margin: 0em 7% 2em !important;
   }
-  .list .book--no-img-wrap .book--no-img {
+  .book--no-img-wrap .book--no-img {
     width: 50% !important;
     display: inline-block !important;
     border: none !important;
