@@ -16,6 +16,7 @@
     "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.26.2",
     "extract-text-webpack-plugin": "^2.1.0",
+    "forever": "^0.15.3",
     "packcompressto": "^1.0.1",
     "postcss-loader": "^1.3.3",
     "stylus-loader": "^2.5.0",
@@ -26,6 +27,6 @@
     "start": "forever start app.js",
     "stop": "forever stop app.js",
     "mycompress": "node compress.my.config.js",
-    "dev":"yarn && forever stop app.js  && node compress.my.config.js && webpack -p && forever start app.js"
+    "restart": "forever stop app.js  && node compress.my.config.js && webpack -p && forever start app.js"
   }
 }

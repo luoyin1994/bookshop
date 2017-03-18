@@ -7,7 +7,7 @@ const app     = express()
 const dataApp = express()
 
 /** 声明变量 **/
-const port = 5000
+const port = 80
 
 /** 设定视图模板引擎 **/
 //app
