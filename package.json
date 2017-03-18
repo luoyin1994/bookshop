@@ -25,6 +25,7 @@
   "scripts": {
     "start": "forever start app.js",
     "stop": "forever stop app.js",
-    "mycompress": "node compress.my.config.js"
+    "mycompress": "node compress.my.config.js",
+    "dev":"yarn && forever stop app.js  && node compress.my.config.js && webpack -p && forever start app.js"
   }
 }
