@@ -27,6 +27,7 @@
     "start": "forever start app.js",
     "stop": "forever stop app.js",
     "mycompress": "node compress.my.config.js",
-    "restart": "forever stop app.js  && node compress.my.config.js && webpack -p && forever start app.js"
+    "restart": "forever stop app.js  && node compress.my.config.js && webpack -p && forever start app.js",
+    "init": "npm i && node compress.my.config.js && webpack -p && forever start app.js"
   }
 }
